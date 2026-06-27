@@ -12,7 +12,7 @@ The journey starts with a prompt a user can build and copy entirely by hand — 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Manual Prompt Builder** - Hand-build and copy a complete prompt (canonical model + serializer + chips + live preview), no AI or flags yet
+- [x] **Phase 1: Manual Prompt Builder** - Hand-build and copy a complete prompt (canonical model + serializer + chips + live preview), no AI or flags yet (completed 2026-06-27)
 - [ ] **Phase 2: Data-Driven Flag Controls** - Set Midjourney flags via version-gated UI controls driven by config data, rendered into the copied prompt
 - [ ] **Phase 3: Local Library + Backup** - Save, list, reload (full builder state), delete prompts locally, plus JSON export/import backup
 - [ ] **Phase 4: AI-Populated Palettes + BYO Key** - Enter intent + own LLM key, trigger AI to fill categorized palettes, click chips to assemble
@@ -36,7 +36,7 @@ Plans:
 - [x] 01-01-PLAN.md — Scaffold project, install all deps, configure Tailwind v4 + shadcn/ui, create all test stubs
 - [x] 01-02-PLAN.md — Domain core: PromptDraft schema, sanitize() chokepoint, serialize() pure function
 - [x] 01-03-PLAN.md — Builder state (Zustand) + UI: IntentInput, ChipInput, ChipArea, LivePreview
-- [ ] 01-04-PLAN.md — Copy button + Clear dialog + human verification checkpoint
+- [x] 01-04-PLAN.md — Copy button + Clear dialog + human verification checkpoint
 **UI hint**: yes
 
 ### Phase 2: Data-Driven Flag Controls
@@ -98,7 +98,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Manual Prompt Builder | 3/4 | In Progress|  |
+| 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
 | 2. Data-Driven Flag Controls | 0/TBD | Not started | - |
 | 3. Local Library + Backup | 0/TBD | Not started | - |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
