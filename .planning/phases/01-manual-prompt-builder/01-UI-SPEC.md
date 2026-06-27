@@ -65,18 +65,17 @@ and shadcn/ui component defaults — not via custom CSS variables.
 
 ## Typography
 
-Four roles only. No additional roles may be added in Phase 1.
+Three roles render in Phase 1. Exactly 2 font weights in use: 400 (regular) and 500 (medium).
 
 | Role | Size | Weight | Line Height | Tailwind class | Usage |
 |------|------|--------|-------------|----------------|-------|
 | Body | 16px | 400 (regular) | 1.5 | `text-base font-normal leading-relaxed` | Intent textarea content, chip labels, preview prompt text |
 | Label | 14px | 500 (medium) | 1.4 | `text-sm font-medium leading-snug` | Input labels, section headings ("Preview"), chip ✕ aria-label, button text |
-| Heading | 20px | 600 (semibold) | 1.2 | `text-xl font-semibold leading-tight` | Page-level title (app name) if shown; reserved for Phase 3+ nav |
 | Caption | 12px | 400 (regular) | 1.4 | `text-xs font-normal leading-snug` | Character count hint, helper text below inputs |
 
+**Future phases (not rendered in Phase 1):** Heading 20px/600/1.2 reserved for later-phase nav; not rendered in Phase 1.
+
 **Constraints:**
-- Exactly 2 weights in use: 400 and 500. Weight 600 is reserved for Heading role only and
-  does not appear in Phase 1 UI (no top-level title in scope).
 - Body at 1.5 line-height ensures the intent textarea and preview text are comfortable
   for multi-line reading — Midjourney prompts are often 50–200 characters.
 - Preview text renders in `font-mono` (Body size, regular weight) to distinguish the
@@ -121,7 +120,7 @@ Exact shadcn/ui components used in Phase 1. Run `npx shadcn@latest add <name>` f
 
 | Component | shadcn/ui slug | Phase 1 usage | Notes |
 |-----------|---------------|---------------|-------|
-| Button | `button` | Copy button, Add chip button, Clear button, ClearDialog actions | Use `variant="default"` for Copy (accent fill), `variant="ghost"` for Clear, `variant="outline"` for Add |
+| Button | `button` | Copy button, Add keyword button, Clear all button, ClearDialog actions | Use `variant="default"` for Copy (accent fill), `variant="ghost"` for Clear all, `variant="outline"` for Add keyword |
 | Textarea | `textarea` | Intent input (IntentInput) | Autoresize not required for Phase 1; fixed min-height |
 | Input | `input` | Chip label input (ChipInput) | Single-line text input |
 | Badge | `badge` | Chip display (ChipArea) — each chip is a Badge | Chips use `variant="secondary"` with an appended ✕ Button `size="icon" variant="ghost"` |
@@ -188,10 +187,10 @@ Below `md` breakpoint (768px): stack to single column. Preview pane moves below 
 - Element: `<Input>` (shadcn/ui) + `<Button>` (shadcn/ui, `variant="outline"`)
 - Label: "Add a style keyword" — visible `<label>`
 - Placeholder: "e.g. cinematic, neon, oil painting"
-- Submit: Enter key OR clicking Add button
+- Submit: Enter key OR clicking Add keyword button
 - Dedup: case-sensitive; silently ignore if label already exists in `chips[]`
 - Clear on submit: yes — input clears after chip is added
-- Disable Add button when input is empty
+- Disable Add keyword button when input is empty
 
 ### ChipArea
 
@@ -223,7 +222,7 @@ Below `md` breakpoint (768px): stack to single column. Preview pane moves below 
 ### ClearButton + ClearDialog (D-11, locked)
 
 - Element: shadcn/ui `<Button variant="ghost">` for the trigger
-- Label: "Clear"
+- Label: "Clear all"
 - Disabled state: render as `disabled` when builder is already empty (no intent text and no chips) — no dialog shown
 - When content present: open `<AlertDialog>` (shadcn/ui)
   - Title: "Start over?"
@@ -243,8 +242,8 @@ Below `md` breakpoint (768px): stack to single column. Preview pane moves below 
 | Intent input placeholder | "e.g. a misty mountain lake at dawn, shot from above" | Discretion default |
 | Chip input label | "Add a style keyword" | Discretion default |
 | Chip input placeholder | "e.g. cinematic, neon, oil painting" | Discretion default |
-| Add chip button | "Add" | Discretion default |
-| Clear button | "Clear" | Discretion default |
+| Add chip button | "Add keyword" | Discretion default |
+| Clear button | "Clear all" | Discretion default |
 | Preview pane heading | "Preview" | RESEARCH.md Pattern (App.tsx walking skeleton) |
 | Preview empty state | "Your prompt will appear here…" | RESEARCH.md Pattern (App.tsx walking skeleton) |
 | Clear dialog title | "Start over?" | RESEARCH.md Pattern 7 |
