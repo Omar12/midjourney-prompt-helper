@@ -208,6 +208,9 @@ Components from Phase 1 reused unchanged:
 - Heading: "Flags" — rendered as `<h3 className="text-sm font-medium">` matching section
   heading pattern from Phase 1 ("Preview" label style)
 - Layout: `flex flex-col gap-4`
+- Primary visual anchor: VersionSelect is the section's gating entry-point control —
+  it sits first in the flat list and its selection determines which of the remaining
+  flag controls are visible, making it the highest-hierarchy element in the section.
 - Renders only the flags supported by `selectedVersionId` (via `getFlagsForVersion()`).
   When a flag is hidden due to version gating, it disappears from the DOM — no disabled
   row, no "unavailable" message (VAL-01 is out of scope).
@@ -236,7 +239,7 @@ Components from Phase 1 reused unchanged:
 - × icon button right-aligned — appears only when any AR value (preset or custom) is set
 
 **Preset chips:**
-- 7 chips in a `flex flex-wrap gap-1.5` row: "1:1", "4:5", "3:2", "2:3", "16:9", "9:16", "21:9"
+- 7 chips in a `flex flex-wrap gap-2` row: "1:1", "4:5", "3:2", "2:3", "16:9", "9:16", "21:9"
 - Each chip: `<Button size="sm">` with `variant="outline"` (unselected) or `variant="default"`
   (selected / accent fill)
 - Click unselected chip: sets AR flag to that value; chip becomes `variant="default"`;
