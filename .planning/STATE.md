@@ -4,13 +4,13 @@ milestone: v1.0
 milestone_name: milestone
 status: executing
 stopped_at: Phase 1 planned (4 plans, verified)
-last_updated: "2026-06-27T17:36:42.192Z"
+last_updated: "2026-06-27T17:45:26.663Z"
 last_activity: 2026-06-27
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 4
-  completed_plans: 2
+  completed_plans: 3
   percent: 0
 ---
 
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-06-26)
 ## Current Position
 
 Phase: 01 (manual-prompt-builder) — EXECUTING
-Plan: 3 of 4
+Plan: 4 of 4
 Status: Ready to execute
 Last activity: 2026-06-27
 
-Progress: [█████░░░░░] 50%
+Progress: [████████░░] 75%
 
 ## Performance Metrics
 
@@ -54,6 +54,7 @@ Progress: [█████░░░░░] 50%
 *Updated after each plan completion*
 | Phase 01-manual-prompt-builder P01 | 20m | 2 tasks | 23 files |
 | Phase 01-manual-prompt-builder P02 | 42m | 2 tasks | 6 files |
+| Phase 01-manual-prompt-builder P03 | 4m | 2 tasks | 11 files |
 
 ## Accumulated Context
 
@@ -68,6 +69,8 @@ Recent decisions affecting current work:
 - [Roadmap]: Additional LLM providers are v2 (PROV-01) — Phase 4 ships one extensible provider adapter only.
 - [Roadmap]: Desktop (Tauri) deliberately last — wiring over existing ports, not a rewrite.
 - [Phase ?]: Phase 01-01 scaffold
+- [Phase ?]: Object selectors create new references each call, causing infinite loops
+- [Phase ?]: Preview derived inline in App; toDraft() deferred to Phase 3
 
 ### Pending Todos
 
@@ -89,6 +92,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-06-27T17:36:42.184Z
+Last session: 2026-06-27T17:45:22.228Z
 Stopped at: Phase 1 planned (4 plans, verified)
 Resume file: None
