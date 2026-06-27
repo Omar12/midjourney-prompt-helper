@@ -9,19 +9,19 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Builder Core
 
-- [ ] **BLD-01**: User can enter a plain-language intent in a single input field
+- [x] **BLD-01**: User can enter a plain-language intent in a single input field
 - [ ] **BLD-02**: User can click palette chips to add them to the prompt
-- [ ] **BLD-03**: User can deselect/remove a previously added chip
-- [ ] **BLD-04**: User can add a custom chip not offered by a palette
-- [ ] **BLD-05**: User sees a live preview of the assembled prompt string as they build
-- [ ] **BLD-06**: User can clear/reset the builder to start a new prompt
-- [ ] **BLD-07**: User can copy the final prompt to the clipboard
+- [x] **BLD-03**: User can deselect/remove a previously added chip
+- [x] **BLD-04**: User can add a custom chip not offered by a palette
+- [x] **BLD-05**: User sees a live preview of the assembled prompt string as they build
+- [x] **BLD-06**: User can clear/reset the builder to start a new prompt
+- [x] **BLD-07**: User can copy the final prompt to the clipboard
 
 ### Prompt Assembly
 
-- [ ] **ASM-01**: The app produces a single deterministic prompt string from intent text, selected chips, and flag values (correct ordering and spacing)
-- [ ] **ASM-02**: The prompt string is built from a canonical structured model (re-editable), not stored only as text
-- [ ] **ASM-03**: Special characters in user/AI content are escaped so they cannot break Midjourney syntax (e.g. stray `::` or `--`)
+- [x] **ASM-01**: The app produces a single deterministic prompt string from intent text, selected chips, and flag values (correct ordering and spacing)
+- [x] **ASM-02**: The prompt string is built from a canonical structured model (re-editable), not stored only as text
+- [x] **ASM-03**: Special characters in user/AI content are escaped so they cannot break Midjourney syntax (e.g. stray `::` or `--`)
 
 ### AI Suggestions
 
@@ -99,16 +99,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BLD-01 | Phase 1 | Pending |
+| BLD-01 | Phase 1 | Complete |
 | BLD-02 | Phase 4 | Pending |
-| BLD-03 | Phase 1 | Pending |
-| BLD-04 | Phase 1 | Pending |
-| BLD-05 | Phase 1 | Pending |
-| BLD-06 | Phase 1 | Pending |
-| BLD-07 | Phase 1 | Pending |
-| ASM-01 | Phase 1 | Pending |
-| ASM-02 | Phase 1 | Pending |
-| ASM-03 | Phase 1 | Pending |
+| BLD-03 | Phase 1 | Complete |
+| BLD-04 | Phase 1 | Complete |
+| BLD-05 | Phase 1 | Complete |
+| BLD-06 | Phase 1 | Complete |
+| BLD-07 | Phase 1 | Complete |
+| ASM-01 | Phase 1 | Complete |
+| ASM-02 | Phase 1 | Complete |
+| ASM-03 | Phase 1 | Complete |
 | FLG-01 | Phase 2 | Pending |
 | FLG-02 | Phase 2 | Pending |
 | FLG-03 | Phase 2 | Pending |
