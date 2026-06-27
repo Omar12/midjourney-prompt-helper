@@ -99,13 +99,43 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated during roadmap creation) | | |
+| BLD-01 | Phase 1 | Pending |
+| BLD-02 | Phase 4 | Pending |
+| BLD-03 | Phase 1 | Pending |
+| BLD-04 | Phase 1 | Pending |
+| BLD-05 | Phase 1 | Pending |
+| BLD-06 | Phase 1 | Pending |
+| BLD-07 | Phase 1 | Pending |
+| ASM-01 | Phase 1 | Pending |
+| ASM-02 | Phase 1 | Pending |
+| ASM-03 | Phase 1 | Pending |
+| FLG-01 | Phase 2 | Pending |
+| FLG-02 | Phase 2 | Pending |
+| FLG-03 | Phase 2 | Pending |
+| FLG-04 | Phase 2 | Pending |
+| FLG-05 | Phase 2 | Pending |
+| LIB-01 | Phase 3 | Pending |
+| LIB-02 | Phase 3 | Pending |
+| LIB-03 | Phase 3 | Pending |
+| LIB-04 | Phase 3 | Pending |
+| LIB-05 | Phase 3 | Pending |
+| PLT-03 | Phase 3 | Pending |
+| AI-01 | Phase 4 | Pending |
+| AI-02 | Phase 4 | Pending |
+| AI-03 | Phase 4 | Pending |
+| AI-04 | Phase 4 | Pending |
+| KEY-01 | Phase 4 | Pending |
+| KEY-02 | Phase 4 | Pending |
+| KEY-03 | Phase 4 | Pending |
+| KEY-04 | Phase 4 | Pending |
+| PLT-01 | Phase 5 | Pending |
+| PLT-02 | Phase 5 | Pending |
 
 **Coverage:**
-- v1 requirements: 30 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 30 ⚠️
+- v1 requirements: 31 total
+- Mapped to phases: 31 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-06-26*
-*Last updated: 2026-06-26 after initial definition*
+*Last updated: 2026-06-26 after roadmap creation (traceability populated)*
