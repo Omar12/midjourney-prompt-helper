@@ -34,7 +34,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 4 plans
 Plans:
 - [x] 01-01-PLAN.md — Scaffold project, install all deps, configure Tailwind v4 + shadcn/ui, create all test stubs
-- [ ] 01-02-PLAN.md — Domain core: PromptDraft schema, sanitize() chokepoint, serialize() pure function
+- [x] 01-02-PLAN.md — Domain core: PromptDraft schema, sanitize() chokepoint, serialize() pure function
 - [ ] 01-03-PLAN.md — Builder state (Zustand) + UI: IntentInput, ChipInput, ChipArea, LivePreview
 - [ ] 01-04-PLAN.md — Copy button + Clear dialog + human verification checkpoint
 **UI hint**: yes
@@ -98,7 +98,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Manual Prompt Builder | 1/4 | In Progress|  |
+| 1. Manual Prompt Builder | 2/4 | In Progress|  |
 | 2. Data-Driven Flag Controls | 0/TBD | Not started | - |
 | 3. Local Library + Backup | 0/TBD | Not started | - |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
