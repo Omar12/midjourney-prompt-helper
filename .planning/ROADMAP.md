@@ -31,7 +31,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User sees a live preview of the assembled prompt string that stays in sync as they edit
   4. User can copy the final prompt to the clipboard in one action, and clear/reset the builder to start fresh
   5. Special characters in user text are escaped so they cannot break Midjourney syntax (e.g. stray `::` or `--`)
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [ ] 01-01-PLAN.md — Scaffold project, install all deps, configure Tailwind v4 + shadcn/ui, create all test stubs
+- [ ] 01-02-PLAN.md — Domain core: PromptDraft schema, sanitize() chokepoint, serialize() pure function
+- [ ] 01-03-PLAN.md — Builder state (Zustand) + UI: IntentInput, ChipInput, ChipArea, LivePreview
+- [ ] 01-04-PLAN.md — Copy button + Clear dialog + human verification checkpoint
 **UI hint**: yes
 
 ### Phase 2: Data-Driven Flag Controls
@@ -93,7 +98,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Manual Prompt Builder | 0/TBD | Not started | - |
+| 1. Manual Prompt Builder | 0/4 | Planned | - |
 | 2. Data-Driven Flag Controls | 0/TBD | Not started | - |
 | 3. Local Library + Backup | 0/TBD | Not started | - |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
