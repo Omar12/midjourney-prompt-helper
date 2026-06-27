@@ -1,9 +1,10 @@
 import { useBuildSession } from '@/state/buildSession'
 import { serialize } from '@/domain/prompt/serialize'
 import { IntentInput } from './ControlsPane/IntentInput'
+import { ChipInput } from './ControlsPane/ChipInput'
+import { ChipArea } from './ControlsPane/ChipArea'
 import { LivePreview } from './PreviewPane/LivePreview'
 
-// ChipInput, ChipArea — wired in Task 2
 // CopyButton, ClearButton — wired in Plan 04
 
 export default function App() {
@@ -26,10 +27,9 @@ export default function App() {
       {/* Controls pane — scrollable */}
       <div className="flex-1 overflow-y-auto p-4 md:p-6 flex flex-col gap-6">
         <IntentInput />
-        {/* TODO-ChipInput: replaced in Task 2 */}
-        <div className="TODO-ChipInput" />
-        {/* TODO-ClearButton: replaced in Plan 04 */}
-        <div className="TODO-ClearButton" />
+        <ChipInput />
+        <ChipArea />
+        {/* TODO-ClearButton: wired in Plan 04 */}
       </div>
 
       {/* Preview pane — sticky on wide viewports (D-09) */}
