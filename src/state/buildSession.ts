@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import type { Chip } from '../domain/prompt/model'
+import { sanitize } from '../domain/prompt/sanitize'
 
 interface BuildSessionState {
   intent: string
@@ -20,15 +21,19 @@ export const useBuildSession = create<BuildSessionState>()((set, get) => ({
   addChip: (label) => {
     const trimmed = label.trim()
     if (!trimmed) return
+    // Sanitize before storing — single chokepoint (D-08 / T-04-02).
+    // Phase 4 AI-supplied labels will also route through addChip and inherit this gate.
+    const sanitized = sanitize(trimmed)
+    if (!sanitized) return
     const { chips } = get()
-    // Deduplicate by label (case-sensitive, per Claude's Discretion)
-    if (chips.some((c) => c.label === trimmed)) return
+    // Deduplicate by sanitized label (case-sensitive, per Claude's Discretion)
+    if (chips.some((c) => c.label === sanitized)) return
     set({
       chips: [
         ...chips,
         {
           id: crypto.randomUUID(),
-          label: trimmed,
+          label: sanitized,
           source: 'custom',
           enabled: true,
         },

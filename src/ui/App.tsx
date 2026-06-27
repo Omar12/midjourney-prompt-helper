@@ -4,8 +4,8 @@ import { IntentInput } from './ControlsPane/IntentInput'
 import { ChipInput } from './ControlsPane/ChipInput'
 import { ChipArea } from './ControlsPane/ChipArea'
 import { LivePreview } from './PreviewPane/LivePreview'
-
-// CopyButton, ClearButton — wired in Plan 04
+import { CopyButton } from './PreviewPane/CopyButton'
+import { ClearButton } from './ClearDialog'
 
 export default function App() {
   const intent = useBuildSession((s) => s.intent)
@@ -29,7 +29,7 @@ export default function App() {
         <IntentInput />
         <ChipInput />
         <ChipArea />
-        {/* TODO-ClearButton: wired in Plan 04 */}
+        <ClearButton />
       </div>
 
       {/* Preview pane — sticky on wide viewports (D-09) */}
@@ -38,7 +38,7 @@ export default function App() {
           Preview
         </h2>
         <LivePreview preview={preview} />
-        {/* TODO-CopyButton: wired in Plan 04 */}
+        <CopyButton text={preview} />
       </div>
     </div>
   )
