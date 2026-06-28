@@ -5,16 +5,25 @@ import { sanitize } from '../domain/prompt/sanitize'
 interface BuildSessionState {
   intent: string
   chips: Chip[]
+  selectedVersionId: string | null
+  flagValues: Record<string, unknown>
+  setFlags: Record<string, boolean>
   setIntent(intent: string): void
   addChip(label: string): void
   removeChip(id: string): void
   toggleChip(id: string): void
   clearAll(): void
+  setVersion(versionId: string | null): void
+  setFlag(flagId: string, value: unknown): void
+  unsetFlag(flagId: string): void
 }
 
 export const useBuildSession = create<BuildSessionState>()((set, get) => ({
   intent: '',
   chips: [],
+  selectedVersionId: null,
+  flagValues: {},
+  setFlags: {},
 
   setIntent: (intent) => set({ intent }),
 
@@ -50,5 +59,19 @@ export const useBuildSession = create<BuildSessionState>()((set, get) => ({
       ),
     }),
 
-  clearAll: () => set({ intent: '', chips: [] }),
+  clearAll: () =>
+    set({ intent: '', chips: [], selectedVersionId: null, flagValues: {}, setFlags: {} }),
+
+  setVersion: (versionId) => set({ selectedVersionId: versionId }),
+
+  setFlag: (flagId, value) =>
+    set((s) => ({
+      flagValues: { ...s.flagValues, [flagId]: value },
+      setFlags: { ...s.setFlags, [flagId]: true },
+    })),
+
+  unsetFlag: (flagId) =>
+    set((s) => ({
+      setFlags: { ...s.setFlags, [flagId]: false },
+    })),
 }))
