@@ -675,17 +675,17 @@ await dexieAdapter.deleteEntry(entryId)
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **`LibraryEntry.name` in the import/export schema**
    - What we know: `PromptDraftSchema` (the import validator) lacks `name`. `LibraryEntry` needs it.
    - What's unclear: Whether to extend `PromptDraftSchema` with `name` or validate name separately on import.
-   - Recommendation: Create `LibraryEntrySchema = PromptDraftSchema.extend({ name: z.string() })` in a new `src/domain/library/schema.ts` file. Use this for both the Dexie `EntityTable` type and import validation. Export envelopes serialize the full `LibraryEntry` (including `name`) per entry, making exports round-trippable.
+   - RESOLVED: Create `LibraryEntrySchema = PromptDraftSchema.extend({ name: z.string() })` in a new `src/domain/library/schema.ts` file. Use this for both the Dexie `EntityTable` type and import validation. Export envelopes serialize the full `LibraryEntry` (including `name`) per entry, making exports round-trippable. (Implemented in 03-01 Task 1.)
 
 2. **Inline rename's `updatedAt` update**
    - What we know: `PromptDraftSchema` includes `updatedAt`.
    - What's unclear: Whether renaming an entry should update `updatedAt` (it's a metadata change, not a prompt change).
-   - Recommendation: Yes, update `updatedAt` on rename — `updatedAt` semantically means "entry record last modified," not "prompt content last modified."
+   - RESOLVED: Yes, update `updatedAt` on rename — `updatedAt` semantically means "entry record last modified," not "prompt content last modified." (Implemented in 03-01 `dexieAdapter.renameEntry`.)
 
 ---
 
