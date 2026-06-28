@@ -4,13 +4,13 @@ milestone: v1.0
 milestone_name: milestone
 status: executing
 stopped_at: Phase 2 UI-SPEC approved
-last_updated: "2026-06-28T02:51:38.819Z"
-last_activity: 2026-06-28 -- Phase 02 planning complete
+last_updated: "2026-06-28T03:13:41.492Z"
+last_activity: 2026-06-28
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 10
-  completed_plans: 4
+  completed_plans: 5
   percent: 20
 ---
 
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-26)
 
 **Core value:** The user can go from a vague idea to a copyable, complete Midjourney prompt — assembled from AI-suggested options they choose — faster than writing it by hand.
-**Current focus:** Phase 01 — manual-prompt-builder
+**Current focus:** Phase 02 — data-driven-flag-controls
 
 ## Current Position
 
-Phase: 01 — COMPLETE
-Plan: 4 of 4
+Phase: 02 (data-driven-flag-controls) — EXECUTING
+Plan: 2 of 6
 Status: Ready to execute
-Last activity: 2026-06-28 -- Phase 02 planning complete
+Last activity: 2026-06-28
 
-Progress: [██████████] 100%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -56,6 +56,7 @@ Progress: [██████████] 100%
 | Phase 01-manual-prompt-builder P02 | 42m | 2 tasks | 6 files |
 | Phase 01-manual-prompt-builder P03 | 4m | 2 tasks | 11 files |
 | Phase 01-manual-prompt-builder P04 | 6m | 1 task | 6 files |
+| Phase 02-data-driven-flag-controls P01 | 2m | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,7 @@ Recent decisions affecting current work:
 - [Phase ?]: Preview derived inline in App; toDraft() deferred to Phase 3
 - [Phase 01-04]: Base UI render prop used for AlertDialogTrigger (not asChild) — installed shadcn/ui uses @base-ui/react; asChild causes nested button HTML violation
 - [Phase 01-04]: sanitize() chokepoint now active in addChip — Phase 4 AI labels inherit the gate automatically
+- [Phase ?]: All 5 flags available on all 5 MJ versions at MVP; per-version exclusions are a config edit
 
 ### Pending Todos
 
@@ -95,6 +97,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-06-27T21:46:18.948Z
+Last session: 2026-06-28T03:13:37.695Z
 Stopped at: Phase 2 UI-SPEC approved
-Resume file: .planning/phases/02-data-driven-flag-controls/02-UI-SPEC.md
+Resume file: None

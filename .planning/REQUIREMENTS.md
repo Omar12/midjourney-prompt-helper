@@ -39,7 +39,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Flags
 
-- [ ] **FLG-01**: Midjourney flag definitions are stored as version-scoped data, not hardcoded in UI logic
+- [x] **FLG-01**: Midjourney flag definitions are stored as version-scoped data, not hardcoded in UI logic
 - [ ] **FLG-02**: User can set core flags via UI controls: aspect ratio (`--ar`), version (`--v`/`--niji`), stylize (`--stylize`), chaos (`--chaos`), negative (`--no`), seed (`--seed`)
 - [ ] **FLG-03**: Aspect ratio offers common presets plus a custom w:h entry
 - [ ] **FLG-04**: The version selector gates which flags/values are available for the chosen model version
@@ -109,7 +109,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ASM-01 | Phase 1 | Complete |
 | ASM-02 | Phase 1 | Complete |
 | ASM-03 | Phase 1 | Complete |
-| FLG-01 | Phase 2 | Pending |
+| FLG-01 | Phase 2 | Complete |
 | FLG-02 | Phase 2 | Pending |
 | FLG-03 | Phase 2 | Pending |
 | FLG-04 | Phase 2 | Pending |
