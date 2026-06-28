@@ -17,7 +17,8 @@ export default function App() {
     intent,
     chips,
     flags: [],
-    schemaVersion: 1,
+    schemaVersion: 2,
+    selectedVersionId: null,
     createdAt: '',
     updatedAt: '',
   })

@@ -18,7 +18,8 @@ export const PromptDraftSchema = z.object({
   intent: z.string().max(2000), // opaque block, not split
   chips: z.array(ChipSchema), // insertion-ordered discrete descriptors
   flags: z.array(FlagValueSchema), // empty in Phase 1; Phase 2 populates
-  schemaVersion: z.literal(1), // bump on breaking changes; enables migration
+  schemaVersion: z.literal(2), // bump on breaking changes; enables migration
+  selectedVersionId: z.string().nullable().default(null), // MJ version (e.g. 'v7'); null = none selected
   createdAt: z.string().datetime(),
   updatedAt: z.string().datetime(),
 })
