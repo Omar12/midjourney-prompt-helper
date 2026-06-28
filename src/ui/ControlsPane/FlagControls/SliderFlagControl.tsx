@@ -74,7 +74,7 @@ export function SliderFlagControl({
           min={def.control.min}
           max={def.control.max}
           step={def.control.step}
-          onValueChange={(vals) => onChange(vals[0])}
+          onValueChange={(vals) => onChange(Array.isArray(vals) ? vals[0] : vals)}
           aria-label={`${def.label} value`}
         />
       </div>
