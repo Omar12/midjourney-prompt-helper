@@ -732,22 +732,25 @@ function validateAspectRatio(input: string): string | null {
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **PromptDraft schema version bump**
    - What we know: `selectedVersionId` needs to be available to `serialize()` — either as a `PromptDraft` field or a second argument
    - What's unclear: Phase 3 saves/loads `PromptDraft`; adding a new field now is cheaper than retrofitting later, but bumping `schemaVersion` from 1 to 2 requires updating all test fixtures
    - Recommendation: Add `selectedVersionId: z.string().nullable().default(null)` to `PromptDraftSchema` and bump to `schemaVersion: z.literal(2)`. Update test fixtures in the same plan wave. This is the cleanest seam for Phase 3 library reload (LIB-03).
+   - RESOLVED: Added `selectedVersionId: z.string().nullable().default(null)` to `PromptDraftSchema` and bumped to `schemaVersion: z.literal(2)` per Plan 02-02 (test fixtures updated in same wave).
 
 2. **Niji parameter support exactness**
    - What we know: Niji 7 and Niji 6 support core parameters but may have different ranges or exclude some flags vs standard V7
    - What's unclear: Whether `--stylize` works on both niji 6 and niji 7 with the same 0-1000 range
    - Recommendation: Include niji in `availableOn` for all 5 flags at MVP launch with a user checkpoint to verify; the data-driven structure makes per-version exclusions a config edit.
+   - RESOLVED: All 5 flags include niji in their `availableOn` arrays at MVP per Plan 02-01; the Plan 02-06 human checkpoint validates the niji-specific assumptions. Per-version exclusions remain a config-only edit.
 
 3. **Slider "enable on first interaction" vs "requires explicit set" UX**
    - What we know: D-05 requires explicit set/unset state; a slider shows a position even when "unset"
    - What's unclear: Whether the slider should be visually disabled until the user activates it (clicks an enable toggle/checkbox) vs immediately responsive
    - Recommendation: Add an activate toggle/checkbox per flag. When unset: slider is dimmed/disabled with a greyed track. When user clicks the toggle, the flag becomes set at the current slider position. This makes D-05 explicit without requiring a separate "clear" affordance on top of a disabled slider.
+   - RESOLVED: Switch toggle per flag per Plan 02-04 — slider dimmed/disabled when unset, flag becomes set at current slider position when toggled ON.
 
 ---
 
