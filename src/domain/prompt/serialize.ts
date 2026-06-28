@@ -1,5 +1,6 @@
 import { sanitize } from './sanitize'
 import type { PromptDraft } from './model'
+import { serializeFlag, getVersionParameter } from '../flags/helpers'
 
 /**
  * Deterministic serializer: same PromptDraft → same string (D-04).
@@ -28,9 +29,21 @@ export function serialize(draft: PromptDraft): string {
     if (labelSanitized) parts.push(labelSanitized)
   }
 
-  // Phase 2 extension point: flags appended at the tail here
-  // draft.flags is always [] in Phase 1 — skipped intentionally
+  // Phase 2: build flag tail (version first, then flags in array order)
+  const flagParts: string[] = []
 
-  // D-02: join with ", "
-  return parts.join(', ')
+  if (draft.selectedVersionId !== null) {
+    const param = getVersionParameter(draft.selectedVersionId)
+    if (param) flagParts.push(param)
+  }
+
+  for (const { flagId, value } of draft.flags) {
+    const fragment = serializeFlag(flagId, value)
+    if (fragment) flagParts.push(fragment)
+  }
+
+  // D-02: join descriptors with ", "; append flag tail separated by space
+  const descriptors = parts.join(', ')
+  if (flagParts.length === 0) return descriptors
+  return descriptors ? `${descriptors} ${flagParts.join(' ')}` : flagParts.join(' ')
 }
