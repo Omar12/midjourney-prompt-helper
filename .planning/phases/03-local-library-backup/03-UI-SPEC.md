@@ -1,10 +1,11 @@
 ---
 phase: 3
 slug: local-library-backup
-status: draft
+status: approved
 shadcn_initialized: true
 preset: base-nova / neutral / cssVariables
 created: 2026-06-28
+reviewed_at: 2026-06-28
 ---
 
 # Phase 3 — UI Design Contract
