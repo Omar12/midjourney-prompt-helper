@@ -75,7 +75,7 @@ Plans:
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 02-05-PLAN.md — FlagControls container + App.tsx wiring (version-gated flag derivation, FlagControls mounted) + ClearDialog update + component tests
+- [x] 02-05-PLAN.md — FlagControls container + App.tsx wiring (version-gated flag derivation, FlagControls mounted) + ClearDialog update + component tests
 
 **Wave 5** *(blocked on Wave 4 completion)*
 
@@ -139,7 +139,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
-| 2. Data-Driven Flag Controls | 4/6 | In Progress|  |
+| 2. Data-Driven Flag Controls | 5/6 | In Progress|  |
 | 3. Local Library + Backup | 0/TBD | Not started | - |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
