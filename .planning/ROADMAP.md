@@ -97,7 +97,21 @@ Plans:
   4. User can export the entire library to a JSON file and import it back to restore entries
   5. Saved prompts survive a browser reload, and the app requests durable storage to reduce silent eviction
 
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+**Wave 1**
+
+- [ ] 03-01-PLAN.md — Persistence foundation + Save + List (LIB-01, LIB-02, PLT-03)
+
+**Wave 2** *(both depend on 03-01; run in parallel)*
+
+- [ ] 03-02-PLAN.md — Reload + Delete + Inline Rename (LIB-03, LIB-04)
+- [ ] 03-03-PLAN.md — Export/Import domain module + tests (LIB-05 logic)
+
+**Wave 3** *(depends on 03-02 and 03-03)*
+
+- [ ] 03-04-PLAN.md — ExportImport UI + human verification (LIB-05 UI)
+
 **UI hint**: yes
 
 ### Phase 4: AI-Populated Palettes + BYO Key
@@ -114,7 +128,21 @@ Plans:
   4. User can click palette chips to add them to the prompt and deselect them
   5. Malformed or failed AI responses degrade gracefully without wiping in-progress work (validated against a schema), and LLM access runs through one provider adapter designed for adding more later
 
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+**Wave 1**
+
+- [ ] 03-01-PLAN.md — Persistence foundation + Save + List (LIB-01, LIB-02, PLT-03)
+
+**Wave 2** *(both depend on 03-01; run in parallel)*
+
+- [ ] 03-02-PLAN.md — Reload + Delete + Inline Rename (LIB-03, LIB-04)
+- [ ] 03-03-PLAN.md — Export/Import domain module + tests (LIB-05 logic)
+
+**Wave 3** *(depends on 03-02 and 03-03)*
+
+- [ ] 03-04-PLAN.md — ExportImport UI + human verification (LIB-05 UI)
+
 **UI hint**: yes
 
 ### Phase 5: Desktop App (Tauri)
@@ -140,6 +168,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
-| 3. Local Library + Backup | 0/TBD | Not started | - |
+| 3. Local Library + Backup | 0/4 | Not started | - |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
