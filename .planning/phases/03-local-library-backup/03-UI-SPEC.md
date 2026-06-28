@@ -95,8 +95,8 @@ list by one element.
 
 **Do NOT apply accent to:**
 - Library button (use `variant="ghost"`)
-- Reload button per entry (use `variant="ghost"`)
-- Delete button per entry (use `variant="ghost"` with `text-destructive`)
+- Reload prompt button per entry (use `variant="ghost"`)
+- Delete prompt button per entry (use `variant="ghost"` with `text-destructive`)
 - Export / Import buttons (use `variant="outline"`)
 - Inline rename input focus ring (use default `--ring`)
 
@@ -140,12 +140,17 @@ The Save button sits below the Copy button in the preview pane, separated by the
 A shadcn `<Sheet>` with `side="right"` slides over the entire app. It does not push or
 shrink the two-pane layout — it overlays it with a backdrop scrim.
 
+**Focal point:** The entry list (`flex-1 overflow-y-auto` area) is the primary visual
+anchor of the LibraryDrawer. It occupies the dominant vertical space between the sheet
+header and the pinned footer, drawing the eye immediately on open. The SheetHeader and
+SheetFooter are supporting frames; the entry list is the content payload.
+
 ```
 LibraryDrawer (Sheet, side="right", w-80)
 ├── SheetHeader
 │   ├── SheetTitle: "Saved Prompts"
 │   └── SheetDescription (sr-only): "Your saved prompt library. Reload, rename, or delete entries."
-├── Entry list (overflow-y-auto, flex flex-col gap-3, flex-1)
+├── Entry list (overflow-y-auto, flex flex-col gap-3, flex-1)  ← PRIMARY FOCAL POINT
 │   ├── [PromptEntryCard] × N   (when library has entries)
 │   └── [EmptyState]            (when library is empty)
 └── SheetFooter
@@ -170,11 +175,11 @@ PromptEntryCard (flex flex-col gap-1, p-3, rounded-md, bg-card border border-bor
 ├── [timestamp row]
 │   └── Caption: "Saved Jun 27 at 14:30"
 └── [action row]
-    ├── [Reload] button (variant="ghost", size="sm", Lucide `RotateCcw` icon + "Reload")
-    └── [Delete] button (variant="ghost", size="sm", Lucide `Trash2` icon, text-destructive)
+    ├── [Reload prompt] button (variant="ghost", size="sm", Lucide `RotateCcw` icon + "Reload prompt")
+    └── [Delete prompt] button (variant="ghost", size="sm", Lucide `Trash2` icon, text-destructive, aria-label only)
 ```
 
-The action row is `flex gap-2`. Reload is left-aligned; Delete is right-aligned
+The action row is `flex gap-2`. Reload prompt is left-aligned; Delete prompt is right-aligned
 (`justify-between`).
 
 ---
@@ -191,7 +196,7 @@ Components from Phase 1/2 reused unchanged:
 
 | Component | Phase 3 usage |
 |-----------|---------------|
-| `button` | Save button (preview pane); Library button (preview pane header); Reload + Delete per entry; Export + Import (drawer footer) |
+| `button` | Save button (preview pane); Library button (preview pane header); Reload prompt + Delete prompt per entry; Export + Import (drawer footer) |
 | `input` | Inline rename input (entry name edit mode) |
 | `alert-dialog` | Reload confirm-if-dirty dialog (D-05); Delete confirmation dialog |
 | `badge` | Not used in Phase 3 |
@@ -237,9 +242,9 @@ persistence layer but has no direct UI component surface — it is not a UI libr
   if it exceeds card width. Full name visible on hover via `title` attribute.
 - Timestamp: `text-xs text-muted-foreground` — format: "Saved {Mon D} at {H:MM}"
   (e.g. "Saved Jun 27 at 14:30") using `createdAt` from the stored entry.
-- Reload button: Lucide `RotateCcw` icon (16px) + text "Reload"
-- Delete button: Lucide `Trash2` icon (16px), `text-destructive` color, no text label
-  (icon-only for space efficiency); aria-label: "Delete [entry name]"
+- Reload prompt button: Lucide `RotateCcw` icon (16px) + text "Reload prompt"
+- Delete prompt button: Lucide `Trash2` icon (16px), `text-destructive` color, no visible
+  text label (icon-only for space efficiency); aria-label: "Delete [entry name]"
 
 ### PromptEntryCard — Inline Rename
 
@@ -256,7 +261,7 @@ persistence layer but has no direct UI component surface — it is not a UI libr
 
 ### Reload Confirm Dialog (D-05 — if-dirty gate)
 
-Triggered by clicking Reload when the builder has content.
+Triggered by clicking Reload prompt when the builder has content.
 
 - **Dirty check:** builder is non-empty if `intent !== ''` OR `chips.length > 0` OR any
   flag is set OR `selectedVersionId` is set — same definition as ClearButton's enabled check
@@ -276,14 +281,14 @@ stored `PromptDraft`. Close the drawer after reload.
 
 ### Delete Confirmation Dialog
 
-Triggered by clicking the Delete button on an entry.
+Triggered by clicking the Delete prompt button on an entry.
 
 AlertDialog:
 - Title: "Delete this prompt?"
 - Body: ""{entry name}" will be permanently removed from your library."
   (Entry name is sanitized text already — render as React text child.)
 - Cancel: "Keep it" (`<AlertDialogCancel>`)
-- Confirm: "Delete" (`<AlertDialogAction>`) — styled with `--destructive` background
+- Confirm: "Delete prompt" (`<AlertDialogAction>`) — styled with `--destructive` background
 
 On confirm: Dexie delete by entry `id`. List re-renders via `useLiveQuery`.
 
@@ -349,7 +354,7 @@ behind the drawer.
 | Library button | "Library" | discretion — single noun, direct |
 | Drawer heading | "Saved Prompts" | discretion — descriptive, matches Library button |
 | Entry timestamp format | "Saved {Mon D} at {H:MM}" | discretion — relative-enough, human-readable |
-| Reload entry button | "Reload" | discretion — verb, not "Load" (load implies fresh; reload signals replacement) |
+| Reload entry button | "Reload prompt" | discretion — verb + noun object; "prompt" makes the object explicit; fits size="sm" |
 | Delete entry aria-label | "Delete [entry name]" | discretion — accessibility; dynamic |
 | Reload dialog title | "Replace current prompt?" | discretion — names the consequence, not the action |
 | Reload dialog body | "Your current work will be replaced with the saved prompt. This cannot be undone." | discretion — parallel to Phase 1 clear-dialog body |
@@ -358,7 +363,7 @@ behind the drawer.
 | Delete dialog title | "Delete this prompt?" | discretion — explicit object |
 | Delete dialog body | ""{entry name}" will be permanently removed from your library." | discretion — names the entry; uses `--destructive` confirm |
 | Delete dialog cancel | "Keep it" | discretion — casual, short |
-| Delete dialog confirm | "Delete" | discretion — single verb, destructive styling speaks for it |
+| Delete dialog confirm | "Delete prompt" | discretion — verb + noun object; destructive styling reinforces the action |
 | Export button | "Export library" | discretion — verb + object |
 | Import button | "Import backup" | discretion — "backup" signals what kind of file to expect |
 | Import success (all) | "Imported {n} prompt{s}." | discretion |
@@ -444,6 +449,9 @@ Explicitly out of scope — must not appear in Phase 3 implementation:
 | ImportStatus as transient inline text (not toast) | Discretion — no toast library in scope |
 | Export filename format | CONTEXT.md Claude's discretion: `mj-prompt-library-YYYY-MM-DD.json` |
 | Export JSON envelope shape | CONTEXT.md Claude's discretion: `{ schemaVersion, exportedAt, entries }` |
+| "Reload prompt" label (verb + noun) | Checker refinement — resolves verb-only flag |
+| "Delete prompt" confirm label (verb + noun) | Checker refinement — resolves verb-only flag |
+| LibraryDrawer focal point = entry list (flex-1) | Checker refinement — resolves missing focal point |
 
 ---
 
