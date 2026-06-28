@@ -65,6 +65,47 @@ describe('serialize', () => {
       draft: mkDraft('cats, dogs', []),
       expected: 'cats, dogs',
     },
+    // Phase 2: flag emission cases
+    {
+      desc: 'no regression: empty flags and no version (Phase 1 behavior preserved)',
+      draft: mkDraft('a cat', [], [], [], null),
+      expected: 'a cat',
+    },
+    {
+      desc: 'intent plus ar flag (no version)',
+      draft: mkDraft('a cat', [], [], [{ flagId: 'ar', value: '16:9' }], null),
+      expected: 'a cat --ar 16:9',
+    },
+    {
+      desc: 'version only no intent no flags',
+      draft: mkDraft('', [], [], [], 'v7'),
+      expected: '--v 7',
+    },
+    {
+      desc: 'intent plus version plus stylize flag (version first)',
+      draft: mkDraft('a cat', ['cinematic'], [], [{ flagId: 'stylize', value: 250 }], 'v7'),
+      expected: 'a cat, cinematic --v 7 --stylize 250',
+    },
+    {
+      desc: 'D-04: empty flags array appends nothing to output',
+      draft: mkDraft('a cat', [], [], [], null),
+      expected: 'a cat',
+    },
+    {
+      desc: 'D-06: set to default value (0) still emits flag',
+      draft: mkDraft('a cat', [], [], [{ flagId: 'stylize', value: 0 }], null),
+      expected: 'a cat --stylize 0',
+    },
+    {
+      desc: 'unknown flagId omitted from output',
+      draft: mkDraft('a cat', [], [], [{ flagId: 'NONEXISTENT', value: 123 }], null),
+      expected: 'a cat',
+    },
+    {
+      desc: 'flag only no intent no leading space',
+      draft: mkDraft('', [], [], [{ flagId: 'ar', value: '16:9' }], null),
+      expected: '--ar 16:9',
+    },
   ]
 
   test.each(goldenCases)('$desc', ({ draft, expected }) => {
@@ -93,6 +134,21 @@ describe('serialize', () => {
 
   test('intent with user commas is preserved as-is (opaque block, D-03)', () => {
     expect(serialize(mkDraft('cats, dogs', []))).toBe('cats, dogs')
+  })
+
+  // Phase 2: standalone ordering and version-specific tests
+  test('version parameter emitted before ar flag in output', () => {
+    const result = serialize(mkDraft('a cat', [], [], [{ flagId: 'ar', value: '16:9' }], 'v7'))
+    const vPos = result.indexOf('--v 7')
+    const arPos = result.indexOf('--ar')
+    expect(vPos).toBeGreaterThanOrEqual(0)
+    expect(arPos).toBeGreaterThanOrEqual(0)
+    expect(vPos).toBeLessThan(arPos)
+  })
+
+  test('niji7 version emits --niji 7 parameter', () => {
+    const result = serialize(mkDraft('', [], [], [], 'niji7'))
+    expect(result).toBe('--niji 7')
   })
 
   test('enabled chip whose label trims to empty is excluded from output', () => {
