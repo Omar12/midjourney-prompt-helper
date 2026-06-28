@@ -67,7 +67,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 02-03-PLAN.md — Serializer Phase 2 extension point (version + flags at prompt tail) + shadcn slider/select UI primitives
+- [x] 02-03-PLAN.md — Serializer Phase 2 extension point (version + flags at prompt tail) + shadcn slider/select UI primitives
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
@@ -139,7 +139,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
-| 2. Data-Driven Flag Controls | 2/6 | In Progress|  |
+| 2. Data-Driven Flag Controls | 3/6 | In Progress|  |
 | 3. Local Library + Backup | 0/TBD | Not started | - |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
