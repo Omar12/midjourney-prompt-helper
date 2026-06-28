@@ -90,8 +90,10 @@ list by one element.
 1. Copy button — primary CTA (inherited from Phase 1)
 2. Active AR preset chip (inherited from Phase 2)
 3. Enabled Switch thumb (inherited from Phase 2)
-4. Save button — `variant="default"` (accent fill) in the preview pane. Save is the
-   secondary CTA of this phase and must be visually distinct from the ghost Library button.
+4. Save button — `variant="outline"` in the preview pane. Save is the secondary CTA of
+   this phase and must be visually distinct from the ghost Library button. It sits below
+   the accent-filled Copy button (`variant="default"`), so outline is used to avoid
+   two equal-weight accent buttons stacked together.
 
 **Do NOT apply accent to:**
 - Library button (use `variant="ghost"`)
@@ -188,9 +190,9 @@ The action row is `flex gap-2`. Reload prompt is left-aligned; Delete prompt is 
 
 New shadcn component to add via CLI:
 
-| Component | Install Command | Usage |
-|-----------|----------------|-------|
-| `sheet` | `npx shadcn@latest add sheet` | LibraryDrawer slide-over (D-10) |
+| Component | Install Command | Status | Usage |
+|-----------|----------------|--------|-------|
+| `sheet` | `npx shadcn@latest add sheet` | NOT YET INSTALLED — run before implementation | LibraryDrawer slide-over (D-10) |
 
 Components from Phase 1/2 reused unchanged:
 
@@ -202,7 +204,7 @@ Components from Phase 1/2 reused unchanged:
 | `badge` | Not used in Phase 3 |
 | `slider`, `select`, `textarea` | Not used in Phase 3 |
 
-No new npm packages. Dexie (`dexie` + `dexie-react-hooks`) is introduced at the
+No new npm packages for UI. Dexie (`dexie` + `dexie-react-hooks`) is introduced at the
 persistence layer but has no direct UI component surface — it is not a UI library.
 
 ---
@@ -443,7 +445,7 @@ Explicitly out of scope — must not appear in Phase 3 implementation:
 | Delete confirmation approach | CONTEXT.md — Claude's discretion |
 | Empty library state and microcopy | CONTEXT.md — Claude's discretion |
 | Spacing, typography, color, font, radius | Phase 1 UI-SPEC + Phase 2 UI-SPEC (inherited) |
-| Accent extension to Save button | Phase 3 discretion — Save is the new secondary CTA |
+| Save button uses variant="outline" (not "default") | Discretion — Copy is primary CTA at variant="default"; stacking two accent-fill buttons weakens hierarchy |
 | Sheet component for drawer | Discretion — shadcn official; no vetting required |
 | Inline rename (keyboard-only, no buttons) | Discretion — compact interaction for list UI |
 | ImportStatus as transient inline text (not toast) | Discretion — no toast library in scope |
@@ -457,11 +459,11 @@ Explicitly out of scope — must not appear in Phase 3 implementation:
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS
+- [x] Dimension 5 Spacing: PASS
+- [x] Dimension 6 Registry Safety: PASS
 
-**Approval:** pending
+**Approval:** approved 2026-06-28
