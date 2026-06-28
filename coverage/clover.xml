@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1782582671656" clover="3.2.0">
+  <project timestamp="1782582671656" name="All files">
+    <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2" elements="20" coveredelements="20" complexity="0" loc="12" ncloc="12" packages="1" files="3" classes="3"/>
+    <file name="model.ts" path="/Users/omar/projects/midjourney_prompt_helper/src/domain/prompt/model.ts">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+    </file>
+    <file name="sanitize.ts" path="/Users/omar/projects/midjourney_prompt_helper/src/domain/prompt/sanitize.ts">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="17" count="45" type="stmt"/>
+    </file>
+    <file name="serialize.ts" path="/Users/omar/projects/midjourney_prompt_helper/src/domain/prompt/serialize.ts">
+      <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <line num="18" count="14" type="stmt"/>
+      <line num="21" count="14" type="stmt"/>
+      <line num="22" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="25" count="14" type="stmt"/>
+      <line num="26" count="13" type="cond" truecount="2" falsecount="0"/>
+      <line num="27" count="11" type="stmt"/>
+      <line num="28" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="35" count="14" type="stmt"/>
+    </file>
+  </project>
+</coverage>
