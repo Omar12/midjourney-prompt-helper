@@ -63,7 +63,7 @@ Plans:
 **Wave 1**
 
 - [x] 02-01-PLAN.md — Flag domain module: Zod schemas, VERSION_DEFINITIONS, FLAG_DEFINITIONS, helpers (getFlagsForVersion, serializeFlag, validateAspectRatio) + tests
-- [ ] 02-02-PLAN.md — PromptDraft v2 (add selectedVersionId, bump schemaVersion), Zustand store extension (setFlag, unsetFlag, setVersion, clearAll updated) + tests
+- [x] 02-02-PLAN.md — PromptDraft v2 (add selectedVersionId, bump schemaVersion), Zustand store extension (setFlag, unsetFlag, setVersion, clearAll updated) + tests
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -139,7 +139,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
-| 2. Data-Driven Flag Controls | 1/6 | In Progress|  |
+| 2. Data-Driven Flag Controls | 2/6 | In Progress|  |
 | 3. Local Library + Backup | 0/TBD | Not started | - |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
