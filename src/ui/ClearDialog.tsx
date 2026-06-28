@@ -17,9 +17,15 @@ import { useBuildSession } from '@/state/buildSession'
 export function ClearButton() {
   const intent = useBuildSession((s) => s.intent)
   const chips = useBuildSession((s) => s.chips)
+  const selectedVersionId = useBuildSession((s) => s.selectedVersionId)
+  const setFlags = useBuildSession((s) => s.setFlags)
   const clearAll = useBuildSession((s) => s.clearAll)
 
-  const hasContent = intent.trim() !== '' || chips.length > 0
+  const hasContent =
+    intent.trim() !== '' ||
+    chips.length > 0 ||
+    selectedVersionId !== null ||
+    Object.values(setFlags).some(Boolean)
 
   // D-11: when builder is already empty, render a disabled button with no dialog.
   // Do NOT use window.confirm() — it is blocked in Tauri webviews (RESEARCH.md §"Don't Hand-Roll").
@@ -43,7 +49,7 @@ export function ClearButton() {
         <AlertDialogHeader>
           <AlertDialogTitle>Start over?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will clear your intent and all chips. This action cannot be undone.
+            This will clear your intent, all chips, and all flags. This action cannot be undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
