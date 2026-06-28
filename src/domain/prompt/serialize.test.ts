@@ -1,12 +1,14 @@
 import { describe, test, expect } from 'vitest'
 import { serialize } from './serialize'
-import type { PromptDraft } from './model'
+import type { FlagValue, PromptDraft } from './model'
 
 /** Builds a minimal valid PromptDraft from intent and chip labels. */
 function mkDraft(
   intent: string,
   chipLabels: string[],
   disabledLabels: string[] = [],
+  flags: FlagValue[] = [],
+  selectedVersionId: string | null = null,
 ): PromptDraft {
   return {
     id: crypto.randomUUID(),
@@ -17,8 +19,9 @@ function mkDraft(
       source: 'custom' as const,
       enabled: !disabledLabels.includes(label),
     })),
-    flags: [],
-    schemaVersion: 1,
+    flags,
+    schemaVersion: 2,
+    selectedVersionId,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   }
@@ -99,7 +102,8 @@ describe('serialize', () => {
       intent: 'a cat',
       chips: [{ id: crypto.randomUUID(), label: '   ', source: 'custom', enabled: true }],
       flags: [],
-      schemaVersion: 1,
+      schemaVersion: 2,
+      selectedVersionId: null,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     }
