@@ -10,6 +10,7 @@ interface BuildSessionState {
   setFlags: Record<string, boolean>
   setIntent(intent: string): void
   addChip(label: string): void
+  addPaletteChip(label: string, category: string): void
   removeChip(id: string): void
   toggleChip(id: string): void
   clearAll(): void
@@ -44,6 +45,27 @@ export const useBuildSession = create<BuildSessionState>()((set, get) => ({
           id: crypto.randomUUID(),
           label: sanitized,
           source: 'custom',
+          enabled: true,
+        },
+      ],
+    })
+  },
+
+  addPaletteChip: (label, category) => {
+    const trimmed = label.trim()
+    if (!trimmed) return
+    const sanitized = sanitize(trimmed)
+    if (!sanitized) return
+    const { chips } = get()
+    if (chips.some((c) => c.label === sanitized)) return
+    set({
+      chips: [
+        ...chips,
+        {
+          id: crypto.randomUUID(),
+          label: sanitized,
+          source: 'palette' as const,
+          paletteCategory: category,
           enabled: true,
         },
       ],
