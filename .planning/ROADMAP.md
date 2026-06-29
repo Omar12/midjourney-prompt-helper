@@ -130,18 +130,18 @@ Plans:
 
 **Plans**: 4 plans
 Plans:
-**Wave 1**
+**Wave 1** *(both plans are independent — run in parallel)*
 
-- [x] 03-01-PLAN.md — Persistence foundation + Save + List (LIB-01, LIB-02, PLT-03)
+- [ ] 04-01-PLAN.md — AI domain core: PaletteOptionSchema + PaletteResponseSchema (.catch([])), PaletteAdapter interface, OpenRouterAdapter implementation, mapError + tests (AI-01, AI-02, AI-03, KEY-03, KEY-04)
+- [ ] 04-02-PLAN.md — Key storage hook (useKeyStorage, localStorage) + buildSession.addPaletteChip extension + tests (BLD-02, KEY-01, KEY-02, KEY-03)
 
-**Wave 2** *(both depend on 03-01; run in parallel)*
+**Wave 2** *(depends on 04-01 + 04-02)*
 
-- [x] 03-02-PLAN.md — Reload + Delete + Inline Rename (LIB-03, LIB-04)
-- [x] 03-03-PLAN.md — Export/Import domain module + tests (LIB-05 logic)
+- [ ] 04-03-PLAN.md — Palette session state (usePaletteSession: palettes, isLoading, error) + Settings modal (gear icon, masked key input, save/clear, privacy statement) (AI-03, AI-04, KEY-01, KEY-02, KEY-03)
 
-**Wave 3** *(depends on 03-02 and 03-03)*
+**Wave 3** *(depends on 04-03)*
 
-- [x] 03-04-PLAN.md — ExportImport UI + human verification (LIB-05 UI)
+- [ ] 04-04-PLAN.md — Accordion UI primitive + PaletteAccordion (6 sections, isLoading skeleton) + PaletteOption (click-to-promote, D-08 isSelected) + IntentInput Suggest button + error banner + App.tsx wiring + index.html CSP (AI-01, AI-02, AI-03, AI-04, BLD-02) [has human-verify checkpoint]
 
 **UI hint**: yes
 
@@ -169,5 +169,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
 | 3. Local Library + Backup | 4/4 | Complete   | 2026-06-29 |
-| 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
+| 4. AI-Populated Palettes + BYO Key | 0/4 | Not started | - |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
