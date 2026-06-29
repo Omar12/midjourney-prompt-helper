@@ -141,7 +141,7 @@ Plans:
 
 **Wave 3** *(depends on 03-02 and 03-03)*
 
-- [ ] 03-04-PLAN.md — ExportImport UI + human verification (LIB-05 UI)
+- [x] 03-04-PLAN.md — ExportImport UI + human verification (LIB-05 UI)
 
 **UI hint**: yes
 

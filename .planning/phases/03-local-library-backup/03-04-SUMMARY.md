@@ -31,7 +31,7 @@ decisions:
 metrics:
   duration: 2m
   completed: "2026-06-29"
-  tasks_completed: 1
+  tasks_completed: 2
   files_changed: 2
 ---
 
@@ -89,7 +89,7 @@ None — ExportImport is fully wired to `exportLibrary`/`importLibrary` domain f
 
 ## Checkpoint Status
 
-**Task 2 (checkpoint:human-verify)** — PENDING. Human end-to-end verification of the complete Phase 3 workflow (12 steps: save, list, second save, inline rename, reload clean, reload dirty, delete, persist, export, import, import validation, empty state) has not yet been completed.
+**Task 2 (checkpoint:human-verify)** — PASSED. Human completed end-to-end verification of the complete Phase 3 workflow on 2026-06-29; all 12 steps passed (save, list, second save, inline rename, reload clean, reload dirty, delete, persist, export, import, import validation, empty state). No discrepancies reported. Phase 3 (LIB-01..05, PLT-03) verified end-to-end.
 
 ## Self-Check: PASSED
 
