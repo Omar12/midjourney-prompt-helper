@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Manual Prompt Builder** - Hand-build and copy a complete prompt (canonical model + serializer + chips + live preview), no AI or flags yet (completed 2026-06-27)
 - [x] **Phase 2: Data-Driven Flag Controls** - Set Midjourney flags via version-gated UI controls driven by config data, rendered into the copied prompt (completed 2026-06-28)
-- [ ] **Phase 3: Local Library + Backup** - Save, list, reload (full builder state), delete prompts locally, plus JSON export/import backup
+- [x] **Phase 3: Local Library + Backup** - Save, list, reload (full builder state), delete prompts locally, plus JSON export/import backup (completed 2026-06-29)
 - [ ] **Phase 4: AI-Populated Palettes + BYO Key** - Enter intent + own LLM key, trigger AI to fill categorized palettes, click chips to assemble
 - [ ] **Phase 5: Desktop App (Tauri)** - Same codebase runs as a native desktop app at full feature parity, library persisting locally
 
@@ -110,7 +110,7 @@ Plans:
 
 **Wave 3** *(depends on 03-02 and 03-03)*
 
-- [ ] 03-04-PLAN.md — ExportImport UI + human verification (LIB-05 UI)
+- [x] 03-04-PLAN.md — ExportImport UI + human verification (LIB-05 UI)
 
 **UI hint**: yes
 
@@ -137,7 +137,7 @@ Plans:
 **Wave 2** *(both depend on 03-01; run in parallel)*
 
 - [x] 03-02-PLAN.md — Reload + Delete + Inline Rename (LIB-03, LIB-04)
-- [ ] 03-03-PLAN.md — Export/Import domain module + tests (LIB-05 logic)
+- [x] 03-03-PLAN.md — Export/Import domain module + tests (LIB-05 logic)
 
 **Wave 3** *(depends on 03-02 and 03-03)*
 
@@ -168,6 +168,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
-| 3. Local Library + Backup | 3/4 | In Progress|  |
+| 3. Local Library + Backup | 4/4 | Complete   | 2026-06-29 |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
