@@ -3,6 +3,7 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import {
   Sheet,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetDescription,
@@ -21,6 +22,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Library, BookOpen } from 'lucide-react'
 import { db } from '@/persistence/db'
+import { ExportImport } from './ExportImport'
 import { PromptEntryCard } from './PromptEntryCard'
 import { entryToSession } from '@/domain/library/snapshot'
 import { useBuildSession } from '@/state/buildSession'
@@ -105,6 +107,10 @@ export function LibraryDrawer() {
               ))
             )}
           </div>
+
+          <SheetFooter className="border-t pt-4">
+            <ExportImport entries={entries} />
+          </SheetFooter>
         </SheetContent>
       </Sheet>
 
