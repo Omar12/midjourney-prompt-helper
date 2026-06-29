@@ -592,14 +592,14 @@ export function useKeyStorage() {
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **OpenRouter CORS — official confirmation**
+1. **OpenRouter CORS — official confirmation** — **RESOLVED (not a planning blocker):** HIGH-confidence assumption per CONTEXT.md D-01 rationale and CLAUDE.md §CORS note (OpenRouter/OpenAI-compatible gateways allow browser origins). Fallback documented; runtime CORS verification is a Wave 0 execution step, not a planning uncertainty.
    - What we know: CONTEXT.md and CLAUDE.md both assert OpenRouter is browser-CORS-friendly; community examples call it client-side; OpenRouter docs don't explicitly confirm.
    - What's unclear: Whether OpenRouter requires `HTTP-Referer` or `X-Title` headers for browser calls to not be blocked.
    - Recommendation: Add `HTTP-Referer: 'https://mj-prompt-helper'` and `X-Title: 'Midjourney Prompt Helper'` as optional headers in the createOpenRouter config for good citizenship; test a real API call in Wave 0 before building the full UI.
 
-2. **`@base-ui/react` Accordion API surface**
+2. **`@base-ui/react` Accordion API surface** — **RESOLVED (handled at execution):** 04-04 Task 1 `read_first` reads the `@base-ui/react` accordion source/types before writing the wrapper, so exact prop names are confirmed at implementation time. No planning uncertainty remains.
    - What we know: The package exports `./accordion` at v1.6.0; the project already uses `alert-dialog` from the same library following a specific pattern (render prop, not asChild — see Phase 01-04 lesson).
    - What's unclear: Exact prop names and composition pattern for Accordion without reading the source.
    - Recommendation: Wave 0 task should read `node_modules/@base-ui/react/dist/accordion.js` type declarations or the @base-ui docs before writing the wrapper component.
