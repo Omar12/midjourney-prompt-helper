@@ -106,7 +106,7 @@ Plans:
 **Wave 2** *(both depend on 03-01; run in parallel)*
 
 - [x] 03-02-PLAN.md — Reload + Delete + Inline Rename (LIB-03, LIB-04)
-- [ ] 03-03-PLAN.md — Export/Import domain module + tests (LIB-05 logic)
+- [x] 03-03-PLAN.md — Export/Import domain module + tests (LIB-05 logic)
 
 **Wave 3** *(depends on 03-02 and 03-03)*
 
@@ -136,7 +136,7 @@ Plans:
 
 **Wave 2** *(both depend on 03-01; run in parallel)*
 
-- [ ] 03-02-PLAN.md — Reload + Delete + Inline Rename (LIB-03, LIB-04)
+- [x] 03-02-PLAN.md — Reload + Delete + Inline Rename (LIB-03, LIB-04)
 - [ ] 03-03-PLAN.md — Export/Import domain module + tests (LIB-05 logic)
 
 **Wave 3** *(depends on 03-02 and 03-03)*
@@ -168,6 +168,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
-| 3. Local Library + Backup | 2/4 | In Progress|  |
+| 3. Local Library + Backup | 3/4 | In Progress|  |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
