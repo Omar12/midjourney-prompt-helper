@@ -47,8 +47,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Library
 
-- [ ] **LIB-01**: User can save the current prompt to a named local library entry
-- [ ] **LIB-02**: User can view a list of saved prompts
+- [x] **LIB-01**: User can save the current prompt to a named local library entry
+- [x] **LIB-02**: User can view a list of saved prompts
 - [ ] **LIB-03**: User can reload a saved prompt, restoring full builder state (intent, chips, flags), not just the string
 - [ ] **LIB-04**: User can delete a saved prompt
 - [ ] **LIB-05**: User can export the saved library to a JSON file and import it back (the only backup, since storage can be evicted)
@@ -57,7 +57,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [ ] **PLT-01**: The app runs as a web app and as a desktop app from a single codebase
 - [ ] **PLT-02**: Local persistence works identically on web and desktop behind one storage abstraction
-- [ ] **PLT-03**: Local persistence requests durable storage to reduce silent eviction
+- [x] **PLT-03**: Local persistence requests durable storage to reduce silent eviction
 
 ## v2 Requirements
 
@@ -114,12 +114,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FLG-03 | Phase 2 | Complete |
 | FLG-04 | Phase 2 | Complete |
 | FLG-05 | Phase 2 | Complete |
-| LIB-01 | Phase 3 | Pending |
-| LIB-02 | Phase 3 | Pending |
+| LIB-01 | Phase 3 | Complete |
+| LIB-02 | Phase 3 | Complete |
 | LIB-03 | Phase 3 | Pending |
 | LIB-04 | Phase 3 | Pending |
 | LIB-05 | Phase 3 | Pending |
-| PLT-03 | Phase 3 | Pending |
+| PLT-03 | Phase 3 | Complete |
 | AI-01 | Phase 4 | Pending |
 | AI-02 | Phase 4 | Pending |
 | AI-03 | Phase 4 | Pending |

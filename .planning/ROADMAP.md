@@ -101,7 +101,7 @@ Plans:
 Plans:
 **Wave 1**
 
-- [ ] 03-01-PLAN.md — Persistence foundation + Save + List (LIB-01, LIB-02, PLT-03)
+- [x] 03-01-PLAN.md — Persistence foundation + Save + List (LIB-01, LIB-02, PLT-03)
 
 **Wave 2** *(both depend on 03-01; run in parallel)*
 
@@ -168,6 +168,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
-| 3. Local Library + Backup | 0/4 | Not started | - |
+| 3. Local Library + Backup | 1/4 | In Progress|  |
 | 4. AI-Populated Palettes + BYO Key | 0/TBD | Not started | - |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
