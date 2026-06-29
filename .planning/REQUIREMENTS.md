@@ -49,8 +49,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **LIB-01**: User can save the current prompt to a named local library entry
 - [x] **LIB-02**: User can view a list of saved prompts
-- [ ] **LIB-03**: User can reload a saved prompt, restoring full builder state (intent, chips, flags), not just the string
-- [ ] **LIB-04**: User can delete a saved prompt
+- [x] **LIB-03**: User can reload a saved prompt, restoring full builder state (intent, chips, flags), not just the string
+- [x] **LIB-04**: User can delete a saved prompt
 - [ ] **LIB-05**: User can export the saved library to a JSON file and import it back (the only backup, since storage can be evicted)
 
 ### Platform
@@ -116,8 +116,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FLG-05 | Phase 2 | Complete |
 | LIB-01 | Phase 3 | Complete |
 | LIB-02 | Phase 3 | Complete |
-| LIB-03 | Phase 3 | Pending |
-| LIB-04 | Phase 3 | Pending |
+| LIB-03 | Phase 3 | Complete |
+| LIB-04 | Phase 3 | Complete |
 | LIB-05 | Phase 3 | Pending |
 | PLT-03 | Phase 3 | Complete |
 | AI-01 | Phase 4 | Pending |
