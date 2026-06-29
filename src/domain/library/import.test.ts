@@ -7,13 +7,17 @@ beforeEach(async () => {
   await db.entries.clear()
 })
 
-// Helper: build a minimal valid LibraryEntry for use in envelopes
+// Helper: build a minimal valid LibraryEntry for use in envelopes.
+// chips must match ChipSchema: { id: uuid, label: string, source: enum, enabled: boolean }
 function makeValidEntry(overrides: Record<string, unknown> = {}) {
   return {
     id: crypto.randomUUID(),
     name: 'Test Prompt',
     intent: 'a moody forest scene',
-    chips: ['moody', 'forest'],
+    chips: [
+      { id: crypto.randomUUID(), label: 'moody', source: 'custom', enabled: true },
+      { id: crypto.randomUUID(), label: 'forest', source: 'custom', enabled: true },
+    ],
     flags: [],
     selectedVersionId: 'v6',
     schemaVersion: 2,
