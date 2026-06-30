@@ -137,7 +137,7 @@ Plans:
 
 **Wave 2** *(depends on 04-01 + 04-02)*
 
-- [ ] 04-03-PLAN.md — Palette session state (usePaletteSession: palettes, isLoading, error) + Settings modal (gear icon, masked key input, save/clear, privacy statement) (AI-03, AI-04, KEY-01, KEY-02, KEY-03)
+- [x] 04-03-PLAN.md — Palette session state (usePaletteSession: palettes, isLoading, error) + Settings modal (gear icon, masked key input, save/clear, privacy statement) (AI-03, AI-04, KEY-01, KEY-02, KEY-03)
 
 **Wave 3** *(depends on 04-03)*
 
@@ -169,5 +169,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
 | 3. Local Library + Backup | 4/4 | Complete   | 2026-06-29 |
-| 4. AI-Populated Palettes + BYO Key | 2/4 | In Progress|  |
+| 4. AI-Populated Palettes + BYO Key | 3/4 | In Progress|  |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
