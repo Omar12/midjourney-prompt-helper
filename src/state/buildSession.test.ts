@@ -135,3 +135,44 @@ describe('clearAll', () => {
     expect(state.setFlags).toEqual({})
   })
 })
+
+describe('addPaletteChip', () => {
+  test('addPaletteChip adds chip with source:"palette" and paletteCategory', () => {
+    useBuildSession.getState().addPaletteChip('Cinematic', 'styleMedium')
+    const { chips } = useBuildSession.getState()
+    expect(chips).toHaveLength(1)
+    expect(chips[0]).toMatchObject({
+      label: 'Cinematic',
+      source: 'palette',
+      paletteCategory: 'styleMedium',
+      enabled: true,
+    })
+  })
+
+  test('addPaletteChip deduplicates by sanitized label — same label twice results in one chip', () => {
+    useBuildSession.getState().addPaletteChip('Cinematic', 'styleMedium')
+    useBuildSession.getState().addPaletteChip('Cinematic', 'styleMedium')
+    expect(useBuildSession.getState().chips).toHaveLength(1)
+  })
+
+  test('addPaletteChip sanitizes label before storing (strips -- injection)', () => {
+    useBuildSession.getState().addPaletteChip('unsafe--label', 'camera')
+    const { chips } = useBuildSession.getState()
+    expect(chips).toHaveLength(1)
+    expect(chips[0].label).toBe('unsafe-label')
+    expect(chips[0].label).not.toContain('--')
+  })
+
+  test('addPaletteChip with empty or whitespace label leaves chips unchanged', () => {
+    useBuildSession.getState().addPaletteChip('', 'styleMedium')
+    useBuildSession.getState().addPaletteChip('   ', 'styleMedium')
+    expect(useBuildSession.getState().chips).toHaveLength(0)
+  })
+
+  test('addChip still adds chip with source:"custom" (existing behavior unchanged)', () => {
+    useBuildSession.getState().addChip('cinematic')
+    const { chips } = useBuildSession.getState()
+    expect(chips).toHaveLength(1)
+    expect(chips[0].source).toBe('custom')
+  })
+})
