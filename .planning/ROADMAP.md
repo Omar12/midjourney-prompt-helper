@@ -132,8 +132,8 @@ Plans:
 Plans:
 **Wave 1** *(both plans are independent — run in parallel)*
 
-- [ ] 04-01-PLAN.md — AI domain core: PaletteOptionSchema + PaletteResponseSchema (.catch([])), PaletteAdapter interface, OpenRouterAdapter implementation, mapError + tests (AI-01, AI-02, AI-03, KEY-03, KEY-04)
-- [ ] 04-02-PLAN.md — Key storage hook (useKeyStorage, localStorage) + buildSession.addPaletteChip extension + tests (BLD-02, KEY-01, KEY-02, KEY-03)
+- [x] 04-01-PLAN.md — AI domain core: PaletteOptionSchema + PaletteResponseSchema (.catch([])), PaletteAdapter interface, OpenRouterAdapter implementation, mapError + tests (AI-01, AI-02, AI-03, KEY-03, KEY-04)
+- [x] 04-02-PLAN.md — Key storage hook (useKeyStorage, localStorage) + buildSession.addPaletteChip extension + tests (BLD-02, KEY-01, KEY-02, KEY-03)
 
 **Wave 2** *(depends on 04-01 + 04-02)*
 
@@ -169,5 +169,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
 | 3. Local Library + Backup | 4/4 | Complete   | 2026-06-29 |
-| 4. AI-Populated Palettes + BYO Key | 0/4 | Not started | - |
+| 4. AI-Populated Palettes + BYO Key | 2/4 | In Progress|  |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
