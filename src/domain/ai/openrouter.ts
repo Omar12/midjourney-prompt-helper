@@ -3,7 +3,7 @@ import { createOpenRouter } from '@openrouter/ai-sdk-provider'
 import type { PaletteAdapter, PaletteCallResult } from './adapter'
 import { PaletteResponseSchema } from './schema'
 
-export const DEFAULT_MODEL = 'google/gemini-2.0-flash'
+export const DEFAULT_MODEL = 'google/gemini-2.0-flash-001'
 
 export const PALETTE_SYSTEM_PROMPT = `You are an expert Midjourney prompt assistant.
 Given a user's creative intent, return 6-8 specific, Midjourney-compatible options for each of the six palette categories below.
@@ -27,6 +27,10 @@ export function mapError(err: unknown): PaletteCallResult {
     }
     if (s === 429) {
       return { ok: false, error: { type: 'malformed', message: 'Rate limit reached. Wait a moment and try again.' } }
+    }
+    if (s !== undefined && s >= 400 && s < 500) {
+      // 400 etc. — request rejected (bad model id, unsupported format). Not a connectivity issue.
+      return { ok: false, error: { type: 'malformed', message: 'OpenRouter rejected the request. The model may be unavailable — try again.' } }
     }
     return { ok: false, error: { type: 'network', message: 'Could not reach OpenRouter. Check your connection.' } }
   }
