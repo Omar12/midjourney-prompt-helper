@@ -58,7 +58,10 @@ export const openRouterAdapter: PaletteAdapter = {
 
     try {
       const { object } = await generateObject({
-        model: openrouter.chat(DEFAULT_MODEL),
+        // strict:false — the schema allows optional fields (description), which
+        // OpenAI's strict json_schema rejects ("required must include every key").
+        // Non-strict sends the schema as guidance; Zod does the real validation.
+        model: openrouter.chat(DEFAULT_MODEL, { structuredOutputs: { strict: false } }),
         schema: PaletteResponseSchema,
         system: PALETTE_SYSTEM_PROMPT,
         prompt: intent,
