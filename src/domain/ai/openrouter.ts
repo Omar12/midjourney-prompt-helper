@@ -3,7 +3,11 @@ import { createOpenRouter } from '@openrouter/ai-sdk-provider'
 import type { PaletteAdapter, PaletteCallResult } from './adapter'
 import { PaletteResponseSchema } from './schema'
 
-export const DEFAULT_MODEL = 'google/gemini-2.0-flash-001'
+// ponytail: hardcoded default; add a model picker in Settings if users need to switch.
+// openai/* endpoints are never filtered by OpenRouter's data-training privacy policy
+// (unlike Google/free models, which 404 "No endpoints found" when logging is disabled),
+// so this is the most reliable BYO-key default for structured-output calls.
+export const DEFAULT_MODEL = 'openai/gpt-4o-mini'
 
 export const PALETTE_SYSTEM_PROMPT = `You are an expert Midjourney prompt assistant.
 Given a user's creative intent, return 6-8 specific, Midjourney-compatible options for each of the six palette categories below.
