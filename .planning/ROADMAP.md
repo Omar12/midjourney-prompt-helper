@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Manual Prompt Builder** - Hand-build and copy a complete prompt (canonical model + serializer + chips + live preview), no AI or flags yet (completed 2026-06-27)
 - [x] **Phase 2: Data-Driven Flag Controls** - Set Midjourney flags via version-gated UI controls driven by config data, rendered into the copied prompt (completed 2026-06-28)
 - [x] **Phase 3: Local Library + Backup** - Save, list, reload (full builder state), delete prompts locally, plus JSON export/import backup (completed 2026-06-29)
-- [ ] **Phase 4: AI-Populated Palettes + BYO Key** - Enter intent + own LLM key, trigger AI to fill categorized palettes, click chips to assemble
+- [x] **Phase 4: AI-Populated Palettes + BYO Key** - Enter intent + own LLM key, trigger AI to fill categorized palettes, click chips to assemble (completed 2026-07-01)
 - [ ] **Phase 5: Desktop App (Tauri)** - Same codebase runs as a native desktop app at full feature parity, library persisting locally
 
 ## Phase Details
@@ -141,7 +141,7 @@ Plans:
 
 **Wave 3** *(depends on 04-03)*
 
-- [ ] 04-04-PLAN.md — Accordion UI primitive + PaletteAccordion (6 sections, isLoading skeleton) + PaletteOption (click-to-promote, D-08 isSelected) + IntentInput Suggest button + error banner + App.tsx wiring + index.html CSP (AI-01, AI-02, AI-03, AI-04, BLD-02) [has human-verify checkpoint]
+- [x] 04-04-PLAN.md — Accordion UI primitive + PaletteAccordion (6 sections, isLoading skeleton) + PaletteOption (click-to-promote, D-08 isSelected) + IntentInput Suggest button + error banner + App.tsx wiring + index.html CSP (AI-01, AI-02, AI-03, AI-04, BLD-02) [has human-verify checkpoint]
 
 **UI hint**: yes
 
@@ -169,5 +169,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Manual Prompt Builder | 4/4 | Complete   | 2026-06-27 |
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
 | 3. Local Library + Backup | 4/4 | Complete   | 2026-06-29 |
-| 4. AI-Populated Palettes + BYO Key | 3/4 | In Progress|  |
+| 4. AI-Populated Palettes + BYO Key | 4/4 | Complete   | 2026-07-01 |
 | 5. Desktop App (Tauri) | 0/TBD | Not started | - |
