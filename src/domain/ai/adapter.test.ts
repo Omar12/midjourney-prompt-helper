@@ -72,7 +72,7 @@ describe('mapError — error classification contract', () => {
       usage: null,
       finishReason: 'error',
       warnings: [],
-    })
+    } as never)
     const result = mapError(err)
     expect(result.ok).toBe(false)
     if (!result.ok) {

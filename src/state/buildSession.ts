@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import type { Chip } from '../domain/prompt/model'
 import { sanitize } from '../domain/prompt/sanitize'
 
-interface BuildSessionState {
+export interface BuildSessionState {
   intent: string
   chips: Chip[]
   selectedVersionId: string | null

@@ -36,7 +36,7 @@ const validPalettes = {
 beforeEach(() => {
   vi.clearAllMocks()
   // Re-stub createOpenRouter after clear
-  mockCreateOpenRouter.mockReturnValue({ chat: vi.fn(() => 'mock-model') } as ReturnType<typeof createOpenRouter>)
+  mockCreateOpenRouter.mockReturnValue({ chat: vi.fn(() => 'mock-model') } as unknown as ReturnType<typeof createOpenRouter>)
 })
 
 describe('openRouterAdapter.providerId', () => {
@@ -65,7 +65,11 @@ describe('openRouterAdapter.generatePalettes — happy path', () => {
     await openRouterAdapter.generatePalettes('a foggy forest', 'sk-test-key')
 
     expect(mockGenerateObject).toHaveBeenCalledOnce()
-    const call = mockGenerateObject.mock.calls[0][0]
+    const call = mockGenerateObject.mock.calls[0][0] as {
+      prompt?: unknown
+      schema?: unknown
+      system?: unknown
+    }
     expect(call.prompt).toBe('a foggy forest')
     expect(call.schema).toBeDefined()
     expect(call.system).toBeDefined()
