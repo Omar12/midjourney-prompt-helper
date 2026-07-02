@@ -2,35 +2,33 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: milestone_complete
-stopped_at: Milestone complete (Phase 05 was final phase)
-last_updated: 2026-07-02T17:48:30.516Z
-last_activity: 2026-07-02
+status: Awaiting next milestone
+stopped_at: 05-03 Task 1 complete (production build); Task 2 D-05 UAT checkpoint awaiting human verification
+last_updated: "2026-07-02T20:50:00.982Z"
+last_activity: 2026-07-02 — Milestone v1.0 completed and archived
 progress:
   total_phases: 5
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 21
   completed_plans: 21
-  percent: 80
+  percent: 100
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-26)
+See: .planning/PROJECT.md (updated 2026-07-02)
 
 **Core value:** The user can go from a vague idea to a copyable, complete Midjourney prompt — assembled from AI-suggested options they choose — faster than writing it by hand.
-**Current focus:** Milestone complete
+**Current focus:** v1.0 shipped — planning next milestone (`/gsd:new-milestone`)
 
 ## Current Position
 
-Phase: 05
-Plan: Not started
-Status: Milestone complete
-Last activity: 2026-07-02
-
-Progress: [█████████░] 95%
+Phase: Milestone v1.0 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-07-02 — Milestone v1.0 completed and archived
 
 ## Performance Metrics
 
@@ -101,10 +99,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- [Phase 4]: Research flag — exact AI SDK v7 `generateObject`/Zod signatures and per-provider browser CORS behavior are MEDIUM confidence; verify during plan-phase (`--research-phase 4`).
-- [Phase 2]: Research flag — live Midjourney parameter/version matrix shifts frequently; re-verify ranges/defaults/version-gating when seeding `flags.config.json`.
-- [Phase 5]: Research flag — Tauri native-HTTP CORS bypass, Stronghold key storage, and per-OS webview differences warrant a focused pass.
-- 05-03 Task 2: D-05 UAT parity checkpoint awaiting human verification (web + desktop). .app bundle built at src-tauri/target/release/bundle/macos/Midjourney Prompt Helper.app
+None open — all v1.0 research flags resolved and D-05 UAT approved. Carry-forward notes for future work:
+
+- Live Midjourney parameter/version matrix shifts frequently; re-verify ranges/defaults/version-gating when editing `flags.config.json`.
+- Phase 05 formal Nyquist validation left as `draft` (phase passed verification + human UAT); run `/gsd:validate-phase 05` if strict Nyquist coverage is later required.
 
 ## Deferred Items
 
@@ -119,3 +117,7 @@ Items acknowledged and carried forward from previous milestone close:
 Last session: 2026-07-02T17:30:45.896Z
 Stopped at: 05-03 Task 1 complete (production build); Task 2 D-05 UAT checkpoint awaiting human verification
 Resume file: 05-03-PLAN.md
+
+## Operator Next Steps
+
+- Start the next milestone with /gsd-new-milestone
