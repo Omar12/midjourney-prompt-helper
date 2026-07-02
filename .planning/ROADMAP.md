@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Data-Driven Flag Controls** - Set Midjourney flags via version-gated UI controls driven by config data, rendered into the copied prompt (completed 2026-06-28)
 - [x] **Phase 3: Local Library + Backup** - Save, list, reload (full builder state), delete prompts locally, plus JSON export/import backup (completed 2026-06-29)
 - [x] **Phase 4: AI-Populated Palettes + BYO Key** - Enter intent + own LLM key, trigger AI to fill categorized palettes, click chips to assemble (completed 2026-07-01)
-- [ ] **Phase 5: Desktop App (Tauri)** - Same codebase runs as a native desktop app at full feature parity, library persisting locally (05-03 Task 1 complete; Task 2 D-05 UAT checkpoint awaiting human verification)
+- [x] **Phase 5: Desktop App (Tauri)** - Same codebase runs as a native desktop app at full feature parity, library persisting locally (D-05 UAT approved by user on web + desktop) (completed 2026-07-02)
 
 ## Phase Details
 
@@ -162,7 +162,7 @@ Plans:
 
 - [x] 05-01-PLAN.md — Scaffold src-tauri/ via npx tauri init + Vite config Tauri additions + tauri npm script
 - [x] 05-02-PLAN.md — Replace tauri.conf.json with production config (CSP per D-02) + generate icon sizes
-- [ ] 05-03-PLAN.md — Web build smoke + tauri build (.app bundle) + D-05 UAT parity checkpoint (Task 1 complete; Task 2 D-05 UAT checkpoint awaiting human verification)
+- [x] 05-03-PLAN.md — Web build smoke + tauri build (.app bundle) + D-05 UAT parity checkpoint (Task 1 complete; Task 2 D-05 UAT approved by user on web + desktop)
 
 ## Progress
 
@@ -175,4 +175,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
 | 3. Local Library + Backup | 4/4 | Complete   | 2026-06-29 |
 | 4. AI-Populated Palettes + BYO Key | 4/4 | Complete   | 2026-07-01 |
-| 5. Desktop App (Tauri) | 2/3 | In Progress|  |
+| 5. Desktop App (Tauri) | 3/3 | Complete   | 2026-07-02 |

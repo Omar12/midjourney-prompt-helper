@@ -127,7 +127,7 @@ None beyond the two build-blocking config bugs documented above, both resolved w
 
 ---
 *Phase: 05-desktop-app-tauri*
-*Completed: Task 1 only — 2026-07-02 (Task 2 pending human verification)*
+*Completed: Task 1 + Task 2 — 2026-07-02. Task 2 D-05 UAT parity flow APPROVED by user on both web and desktop targets (PLT-01, PLT-02, SC#1-3 satisfied; library persistence confirmed across desktop restart; no CSP violations).*
 
 ## Self-Check: PASSED
 All claimed files (vite.config.ts, src-tauri/tauri.conf.json, .app bundle at src-tauri/target/release/bundle/macos/Midjourney Prompt Helper.app) confirmed present on disk. Commit f618ae8 confirmed in git log.
