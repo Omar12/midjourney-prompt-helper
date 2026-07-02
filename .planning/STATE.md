@@ -4,13 +4,13 @@ milestone: v1.0
 milestone_name: milestone
 status: executing
 stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-07-02T16:52:13.087Z"
+last_updated: "2026-07-02T17:17:31.508Z"
 last_activity: 2026-07-02
 progress:
   total_phases: 5
   completed_phases: 4
   total_plans: 21
-  completed_plans: 19
+  completed_plans: 20
   percent: 80
 ---
 
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-06-26)
 ## Current Position
 
 Phase: 05 (desktop-app-tauri) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-07-02
 
-Progress: [█████████░] 90%
+Progress: [██████████] 95%
 
 ## Performance Metrics
 
@@ -65,6 +65,7 @@ Progress: [█████████░] 90%
 | Phase 03-local-library-backup P03 | 5m | 2 tasks | 2 files |
 | Phase 03-local-library-backup P04 | 2m | 1 tasks | 2 files |
 | Phase 05-desktop-app-tauri P01 | 12min | 2 tasks | 26 files |
+| Phase 05 P02 | 9min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -90,6 +91,8 @@ Recent decisions affecting current work:
 - [Phase ?]: Sibling Fragment prevents Sheet z-index from clipping dialog
 - [Phase ?]: Neutral replace vs destructive delete distinction enforced in UI
 - [Phase 05-01]: Replaced tauri init's default lib.rs (with tauri-plugin-log) with minimal Pattern 6 form — zero custom Rust commands/plugins — App uses no Tauri commands; keeps Rust surface minimal per RESEARCH.md
+- [Phase 05-02]: connect-src limited to ipc:/http://ipc.localhost/openrouter.ai only, no wildcard — API key exfiltration mitigation (T-5-02-01)
+- [Phase 05-02]: Placeholder icon is solid-color only (no text) due to ImageMagick font resolution failure in this environment; acceptable per plan tolerance
 
 ### Pending Todos
 
@@ -111,6 +114,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-02T16:52:13.078Z
+Last session: 2026-07-02T17:08:42.041Z
 Stopped at: Completed 05-01-PLAN.md
 Resume file: None
