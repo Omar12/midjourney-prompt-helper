@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-07-02T17:17:31.508Z"
+stopped_at: 05-03 Task 1 complete (production build); Task 2 D-05 UAT checkpoint awaiting human verification
+last_updated: "2026-07-02T17:31:20.630Z"
 last_activity: 2026-07-02
 progress:
   total_phases: 5
   completed_phases: 4
   total_plans: 21
   completed_plans: 20
-  percent: 80
+  percent: 95
 ---
 
 # Project State
@@ -27,10 +27,10 @@ See: .planning/PROJECT.md (updated 2026-06-26)
 
 Phase: 05 (desktop-app-tauri) — EXECUTING
 Plan: 3 of 3
-Status: Ready to execute
+Status: Task 1 (production build) complete; Task 2 (D-05 UAT checkpoint, gate=blocking) awaiting human verification
 Last activity: 2026-07-02
 
-Progress: [██████████] 95%
+Progress: [█████████░] 95%
 
 ## Performance Metrics
 
@@ -93,6 +93,7 @@ Recent decisions affecting current work:
 - [Phase 05-01]: Replaced tauri init's default lib.rs (with tauri-plugin-log) with minimal Pattern 6 form — zero custom Rust commands/plugins — App uses no Tauri commands; keeps Rust surface minimal per RESEARCH.md
 - [Phase 05-02]: connect-src limited to ipc:/http://ipc.localhost/openrouter.ai only, no wildcard — API key exfiltration mitigation (T-5-02-01)
 - [Phase 05-02]: Placeholder icon is solid-color only (no text) due to ImageMagick font resolution failure in this environment; acceptable per plan tolerance
+- [Phase ?]: [Phase 05-03] Vite build.target raised to safari15 (esbuild 0.28.1 does not downlevel destructuring for safari10-14); tauri.conf.json bundle.targets fixed from invalid default to all
 
 ### Pending Todos
 
@@ -103,6 +104,7 @@ None yet.
 - [Phase 4]: Research flag — exact AI SDK v7 `generateObject`/Zod signatures and per-provider browser CORS behavior are MEDIUM confidence; verify during plan-phase (`--research-phase 4`).
 - [Phase 2]: Research flag — live Midjourney parameter/version matrix shifts frequently; re-verify ranges/defaults/version-gating when seeding `flags.config.json`.
 - [Phase 5]: Research flag — Tauri native-HTTP CORS bypass, Stronghold key storage, and per-OS webview differences warrant a focused pass.
+- 05-03 Task 2: D-05 UAT parity checkpoint awaiting human verification (web + desktop). .app bundle built at src-tauri/target/release/bundle/macos/Midjourney Prompt Helper.app
 
 ## Deferred Items
 
@@ -114,6 +116,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-02T17:08:42.041Z
-Stopped at: Completed 05-01-PLAN.md
-Resume file: None
+Last session: 2026-07-02T17:30:45.896Z
+Stopped at: 05-03 Task 1 complete (production build); Task 2 D-05 UAT checkpoint awaiting human verification
+Resume file: 05-03-PLAN.md
