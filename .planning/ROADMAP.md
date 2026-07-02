@@ -160,7 +160,7 @@ Plans:
 **Plans**: 3 plans
 Plans:
 
-- [ ] 05-01-PLAN.md — Scaffold src-tauri/ via npx tauri init + Vite config Tauri additions + tauri npm script
+- [x] 05-01-PLAN.md — Scaffold src-tauri/ via npx tauri init + Vite config Tauri additions + tauri npm script
 - [ ] 05-02-PLAN.md — Replace tauri.conf.json with production config (CSP per D-02) + generate icon sizes
 - [ ] 05-03-PLAN.md — Web build smoke + tauri build (.app bundle) + D-05 UAT parity checkpoint
 
@@ -175,4 +175,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Data-Driven Flag Controls | 6/6 | Complete   | 2026-06-28 |
 | 3. Local Library + Backup | 4/4 | Complete   | 2026-06-29 |
 | 4. AI-Populated Palettes + BYO Key | 4/4 | Complete   | 2026-07-01 |
-| 5. Desktop App (Tauri) | 0/3 | Not started | - |
+| 5. Desktop App (Tauri) | 1/3 | In Progress|  |

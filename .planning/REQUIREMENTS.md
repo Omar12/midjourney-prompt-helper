@@ -55,7 +55,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Platform
 
-- [ ] **PLT-01**: The app runs as a web app and as a desktop app from a single codebase
+- [x] **PLT-01**: The app runs as a web app and as a desktop app from a single codebase
 - [ ] **PLT-02**: Local persistence works identically on web and desktop behind one storage abstraction
 - [x] **PLT-03**: Local persistence requests durable storage to reduce silent eviction
 
@@ -128,7 +128,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | KEY-02 | Phase 4 | Pending |
 | KEY-03 | Phase 4 | Pending |
 | KEY-04 | Phase 4 | Pending |
-| PLT-01 | Phase 5 | Pending |
+| PLT-01 | Phase 5 | Complete |
 | PLT-02 | Phase 5 | Pending |
 
 **Coverage:**
