@@ -441,8 +441,8 @@ Not applicable. This phase adds new files (`src-tauri/`) and modifies config fil
 |------------|------------|-----------|---------|----------|
 | `cargo` / Rust toolchain | `tauri build` Rust compilation | ✓ | cargo 1.96.0, rustc 1.96.0 | — |
 | Xcode / CLT (macOS) | macOS `.app` bundle linking | ✓ | Xcode 26.3, Build 17C529 | — |
-| `@tauri-apps/cli` | `npx tauri dev` / `tauri build` | ✗ (not yet installed) | — | Install: `npm install -D @tauri-apps/cli@^2.11.4` |
-| `@tauri-apps/api` | Tauri JS runtime bindings | ✗ (not yet installed) | — | Install: `npm install @tauri-apps/api@^2.11.1` |
+| `@tauri-apps/cli` | `npx tauri dev` / `tauri build` | ✓ (in package.json ^2.11.4) | 2.11.4 | — |
+| `@tauri-apps/api` | Tauri JS runtime bindings | ✓ (in package.json ^2.11.1) | 2.11.1 | — |
 | Source icon PNG (1024×1024) | `npx tauri icon` icon generation | ✗ (not present) | — | Create or provide a 1024×1024 PNG; `tauri icon` generates all required sizes |
 
 **Missing dependencies with no fallback:**
