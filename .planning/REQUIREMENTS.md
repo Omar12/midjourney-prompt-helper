@@ -10,7 +10,7 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Builder Core
 
 - [x] **BLD-01**: User can enter a plain-language intent in a single input field
-- [ ] **BLD-02**: User can click palette chips to add them to the prompt
+- [x] **BLD-02**: User can click palette chips to add them to the prompt
 - [x] **BLD-03**: User can deselect/remove a previously added chip
 - [x] **BLD-04**: User can add a custom chip not offered by a palette
 - [x] **BLD-05**: User sees a live preview of the assembled prompt string as they build
@@ -25,17 +25,17 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### AI Suggestions
 
-- [ ] **AI-01**: User can trigger an AI call that populates palettes with options relevant to the entered intent
-- [ ] **AI-02**: AI returns categorized options for the core palettes (Style/Medium, Lighting, Camera & Lens, Composition, Color, Mood)
-- [ ] **AI-03**: AI output is validated against a schema; malformed output degrades gracefully without wiping in-progress work
-- [ ] **AI-04**: AI calls are triggered explicitly (not per-keystroke) to control the user's cost and avoid rate limits
+- [x] **AI-01**: User can trigger an AI call that populates palettes with options relevant to the entered intent
+- [x] **AI-02**: AI returns categorized options for the core palettes (Style/Medium, Lighting, Camera & Lens, Composition, Color, Mood)
+- [x] **AI-03**: AI output is validated against a schema; malformed output degrades gracefully without wiping in-progress work
+- [x] **AI-04**: AI calls are triggered explicitly (not per-keystroke) to control the user's cost and avoid rate limits
 
 ### Provider / API Key
 
-- [ ] **KEY-01**: User can enter and save an LLM API key, stored locally only
-- [ ] **KEY-02**: User can clear/remove the stored key
-- [ ] **KEY-03**: The key is never sent to any first-party server (all LLM calls originate client-side)
-- [ ] **KEY-04**: LLM integration goes through one provider adapter, designed so additional providers can be added later
+- [x] **KEY-01**: User can enter and save an LLM API key, stored locally only
+- [x] **KEY-02**: User can clear/remove the stored key
+- [x] **KEY-03**: The key is never sent to any first-party server (all LLM calls originate client-side)
+- [x] **KEY-04**: LLM integration goes through one provider adapter, designed so additional providers can be added later
 
 ### Flags
 
@@ -100,7 +100,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | BLD-01 | Phase 1 | Complete |
-| BLD-02 | Phase 4 | Pending |
+| BLD-02 | Phase 4 | Complete |
 | BLD-03 | Phase 1 | Complete |
 | BLD-04 | Phase 1 | Complete |
 | BLD-05 | Phase 1 | Complete |
@@ -120,14 +120,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LIB-04 | Phase 3 | Complete |
 | LIB-05 | Phase 3 | Complete |
 | PLT-03 | Phase 3 | Complete |
-| AI-01 | Phase 4 | Pending |
-| AI-02 | Phase 4 | Pending |
-| AI-03 | Phase 4 | Pending |
-| AI-04 | Phase 4 | Pending |
-| KEY-01 | Phase 4 | Pending |
-| KEY-02 | Phase 4 | Pending |
-| KEY-03 | Phase 4 | Pending |
-| KEY-04 | Phase 4 | Pending |
+| AI-01 | Phase 4 | Complete |
+| AI-02 | Phase 4 | Complete |
+| AI-03 | Phase 4 | Complete |
+| AI-04 | Phase 4 | Complete |
+| KEY-01 | Phase 4 | Complete |
+| KEY-02 | Phase 4 | Complete |
+| KEY-03 | Phase 4 | Complete |
+| KEY-04 | Phase 4 | Complete |
 | PLT-01 | Phase 5 | Complete |
 | PLT-02 | Phase 5 | Complete |
 
