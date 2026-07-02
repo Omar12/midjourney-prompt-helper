@@ -19,8 +19,13 @@ export default defineConfig({
   },
   envPrefix: ['VITE_', 'TAURI_ENV_*'],
   build: {
-    // macOS uses Safari/WebKit; target safari13 for WKWebView compatibility
-    target: process.env.TAURI_ENV_PLATFORM === 'windows' ? 'chrome105' : 'safari13',
+    // macOS uses Safari/WebKit; target safari15 for WKWebView compatibility.
+    // esbuild 0.28.1 (installed for this project) does not implement the
+    // destructuring-downlevel transform for safari10-14 (verified empirically:
+    // esbuild.transform() throws "not supported yet" for those targets but
+    // succeeds at safari15+). This app is macOS-only per D-04; safari15
+    // (macOS Monterey, 2021+) is a reasonable floor for a locally-run dev build.
+    target: process.env.TAURI_ENV_PLATFORM === 'windows' ? 'chrome105' : 'safari15',
     minify: !process.env.TAURI_ENV_DEBUG ? 'esbuild' : false,
     sourcemap: !!process.env.TAURI_ENV_DEBUG,
   },
