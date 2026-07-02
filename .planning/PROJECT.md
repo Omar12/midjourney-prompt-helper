@@ -14,7 +14,7 @@ The user can go from a vague idea to a copyable, complete Midjourney prompt — 
 
 <!-- Shipped and confirmed valuable. -->
 
-(None yet — ship to validate)
+- [x] App runs as a web app and as a desktop app from the same codebase — *Validated in Phase 5: Desktop App (Tauri). Native macOS .app built from the same Vite/React codebase; D-05 UAT parity approved on both targets; library persists across desktop restart behind the unchanged StorageAdapter (PLT-01, PLT-02).*
 
 ### Active
 
@@ -28,7 +28,6 @@ The user can go from a vague idea to a copyable, complete Midjourney prompt — 
 - [ ] User can save a prompt to a named local library
 - [ ] User can revisit, reload, and delete saved prompts
 - [ ] User supplies their own LLM API key (any provider), stored locally
-- [ ] App runs as a web app and as a desktop app from the same codebase
 
 ### Out of Scope
 
@@ -84,4 +83,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-26 after initialization*
+*Last updated: 2026-07-02 — Phase 5 (Desktop App / Tauri) complete; final phase of milestone v1.0.*
