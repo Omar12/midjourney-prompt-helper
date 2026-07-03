@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Midjourney Prompt Helper</title>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://openrouter.ai; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:">
+    <!-- Follow the OS light/dark preference. Runs before paint (no flash). -->
+    <script>
+      (function () {
+        var mq = window.matchMedia('(prefers-color-scheme: dark)')
+        var apply = function () { document.documentElement.classList.toggle('dark', mq.matches) }
+        apply()
+        mq.addEventListener('change', apply)
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

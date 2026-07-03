@@ -75,11 +75,34 @@ export function PaletteAccordion() {
     <Accordion multiple defaultValue={['styleMedium']}>
       {CATEGORY_KEYS.map((key) => {
         const options = palettes[key]
+        const selectedCount = options.reduce(
+          (n, o) => (selectedPaletteLabels.has(sanitize(o.label)) ? n + 1 : n),
+          0
+        )
         return (
           <AccordionItem key={key} value={key}>
             <AccordionHeader>
               <AccordionTrigger>
-                {CATEGORY_LABELS[key]}
+                <span className="flex items-center gap-2.5">
+                  {/* Category wayfinding dot — reinforcement; label carries the meaning */}
+                  <span
+                    aria-hidden="true"
+                    className="size-2 shrink-0 rounded-full"
+                    style={{ backgroundColor: `var(--cat-${key})` }}
+                  />
+                  {CATEGORY_LABELS[key]}
+                  {selectedCount > 0 && (
+                    <span
+                      className="rounded-full px-1.5 py-0.5 text-[0.6875rem] font-semibold leading-none tabular-nums"
+                      style={{
+                        color: `var(--cat-${key})`,
+                        backgroundColor: `color-mix(in oklch, var(--cat-${key}) 16%, var(--background))`,
+                      }}
+                    >
+                      {selectedCount}
+                    </span>
+                  )}
+                </span>
               </AccordionTrigger>
             </AccordionHeader>
             <AccordionPanel>

@@ -48,74 +48,93 @@
     --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/*
+ * Palette: fuchsia brand (hue 350), neutrals tinted toward it so nothing reads
+ * dead-gray. Two sanctioned color jobs from PRODUCT.md: organize the palettes
+ * (per-category --cat-* hues) and celebrate the built prompt (brand primary on
+ * the preview + Copy). All text/UI pairs WCAG-verified (see commit notes).
+ */
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
+    --background: oklch(0.988 0.006 350);
+    --foreground: oklch(0.22 0.014 350);
+    --card: oklch(1 0.004 350);
+    --card-foreground: oklch(0.22 0.014 350);
+    --popover: oklch(1 0.004 350);
+    --popover-foreground: oklch(0.22 0.014 350);
+    --primary: oklch(0.55 0.205 350);
+    --primary-foreground: oklch(0.99 0.01 350);
+    --secondary: oklch(0.955 0.012 350);
+    --secondary-foreground: oklch(0.28 0.02 350);
+    --muted: oklch(0.955 0.01 350);
+    --muted-foreground: oklch(0.505 0.028 350);
+    --accent: oklch(0.95 0.02 350);
+    --accent-foreground: oklch(0.28 0.03 350);
+    --destructive: oklch(0.55 0.22 27);
+    --border: oklch(0.905 0.012 350);
+    --input: oklch(0.905 0.012 350);
+    --ring: oklch(0.55 0.205 350);
+    /* Per-category wayfinding hues (reinforcement only; labels carry meaning) */
+    --cat-styleMedium: oklch(0.58 0.17 25);
+    --cat-lighting: oklch(0.58 0.16 70);
+    --cat-cameraLens: oklch(0.55 0.15 150);
+    --cat-composition: oklch(0.55 0.16 245);
+    --cat-color: oklch(0.58 0.17 300);
+    --cat-mood: oklch(0.58 0.17 330);
+    --chart-1: var(--cat-styleMedium);
+    --chart-2: var(--cat-lighting);
+    --chart-3: var(--cat-cameraLens);
+    --chart-4: var(--cat-composition);
+    --chart-5: var(--cat-color);
     --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    --sidebar: oklch(0.975 0.008 350);
+    --sidebar-foreground: oklch(0.22 0.014 350);
+    --sidebar-primary: oklch(0.55 0.205 350);
+    --sidebar-primary-foreground: oklch(0.99 0.01 350);
+    --sidebar-accent: oklch(0.95 0.02 350);
+    --sidebar-accent-foreground: oklch(0.28 0.03 350);
+    --sidebar-border: oklch(0.905 0.012 350);
+    --sidebar-ring: oklch(0.55 0.205 350);
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    /* violet-700 override — Copy button accent per UI-SPEC §Color */
-    --primary: oklch(54% 0.21 291);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    --background: oklch(0.16 0.012 350);
+    --foreground: oklch(0.955 0.01 350);
+    --card: oklch(0.205 0.014 350);
+    --card-foreground: oklch(0.955 0.01 350);
+    --popover: oklch(0.205 0.014 350);
+    --popover-foreground: oklch(0.955 0.01 350);
+    /* neon-fuchsia button: dark ink on bright brand (WCAG 5.44) */
+    --primary: oklch(0.65 0.2 350);
+    --primary-foreground: oklch(0.16 0.03 350);
+    --secondary: oklch(0.27 0.014 350);
+    --secondary-foreground: oklch(0.96 0.01 350);
+    --muted: oklch(0.27 0.014 350);
+    --muted-foreground: oklch(0.72 0.02 350);
+    --accent: oklch(0.3 0.02 350);
+    --accent-foreground: oklch(0.96 0.01 350);
+    --destructive: oklch(0.7 0.19 22);
+    --border: oklch(0.98 0.01 350 / 12%);
+    --input: oklch(0.98 0.01 350 / 15%);
+    --ring: oklch(0.65 0.2 350);
+    --cat-styleMedium: oklch(0.72 0.15 25);
+    --cat-lighting: oklch(0.74 0.14 70);
+    --cat-cameraLens: oklch(0.72 0.13 150);
+    --cat-composition: oklch(0.72 0.14 245);
+    --cat-color: oklch(0.72 0.15 300);
+    --cat-mood: oklch(0.72 0.15 330);
+    --chart-1: var(--cat-styleMedium);
+    --chart-2: var(--cat-lighting);
+    --chart-3: var(--cat-cameraLens);
+    --chart-4: var(--cat-composition);
+    --chart-5: var(--cat-color);
+    --sidebar: oklch(0.205 0.014 350);
+    --sidebar-foreground: oklch(0.955 0.01 350);
+    --sidebar-primary: oklch(0.65 0.2 350);
+    --sidebar-primary-foreground: oklch(0.16 0.03 350);
+    --sidebar-accent: oklch(0.3 0.02 350);
+    --sidebar-accent-foreground: oklch(0.96 0.01 350);
+    --sidebar-border: oklch(0.98 0.01 350 / 12%);
+    --sidebar-ring: oklch(0.65 0.2 350);
 }
 
 @layer base {
@@ -128,4 +147,17 @@
   html {
     @apply font-sans;
     }
+}
+
+/* Honor reduced-motion globally (PRODUCT.md a11y baseline): neutralize the
+   spinner, accordion fade, chevron rotate, and token transitions. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

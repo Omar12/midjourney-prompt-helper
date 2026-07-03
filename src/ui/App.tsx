@@ -57,7 +57,7 @@ export default function App() {
       <div className="flex-1 overflow-y-auto p-4 md:p-6 flex flex-col gap-6">
         {/* AI Palettes header — section label + settings gear */}
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-medium uppercase text-muted-foreground">
+          <h2 className="text-sm font-semibold text-foreground">
             AI Palettes
           </h2>
           <SettingsModal />
@@ -90,9 +90,9 @@ export default function App() {
       </div>
 
       {/* Preview pane — sticky on wide viewports (D-09) */}
-      <div className="w-full md:w-96 border-t md:border-t-0 md:border-l border-border md:sticky md:top-0 md:h-screen p-4 md:p-6 flex flex-col gap-4">
+      <div className="w-full md:w-96 border-t md:border-t-0 md:border-l border-border bg-[color-mix(in_oklch,var(--primary)_7%,var(--background))] md:sticky md:top-0 md:h-screen p-4 md:p-6 flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-medium uppercase text-muted-foreground">
+          <h2 className="text-sm font-semibold text-foreground">
             Preview
           </h2>
           <LibraryDrawer />

@@ -25,9 +25,10 @@ export function CopyButton({ text }: CopyButtonProps) {
   return (
     <Button
       variant="default"
+      size="lg"
       onClick={handleCopy}
       disabled={!text}
-      className="w-full"
+      className="w-full font-semibold"
     >
       {copied ? 'Copied!' : 'Copy prompt'}
     </Button>
