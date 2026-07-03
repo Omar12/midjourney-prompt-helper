@@ -8,6 +8,7 @@ import { ChipArea } from './ControlsPane/ChipArea'
 import { FlagControls } from './ControlsPane/FlagControls/FlagControls'
 import { PaletteAccordion } from './ControlsPane/PaletteAccordion/PaletteAccordion'
 import { SettingsModal } from './ControlsPane/SettingsModal/SettingsModal'
+import { ThemeToggle } from './ControlsPane/ThemeToggle'
 import { LivePreview } from './PreviewPane/LivePreview'
 import { CopyButton } from './PreviewPane/CopyButton'
 import { ClearButton } from './ClearDialog'
@@ -55,12 +56,16 @@ export default function App() {
     <div className="flex flex-col md:flex-row h-auto md:h-screen">
       {/* Controls pane — scrollable */}
       <div className="flex-1 overflow-y-auto p-4 md:p-6 flex flex-col gap-6">
+        <h1 className="text-2xl font-bold text-foreground">Midjourney Prompt Helper</h1>
         {/* AI Palettes header — section label + settings gear */}
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-foreground">
+          <h2 className="text-base font-semibold text-foreground">
             AI Palettes
           </h2>
-          <SettingsModal />
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+            <SettingsModal />
+          </div>
         </div>
 
         {/* Dismissible error banner — outside palette region per D-11 */}
@@ -92,7 +97,7 @@ export default function App() {
       {/* Preview pane — sticky on wide viewports (D-09) */}
       <div className="w-full md:w-96 border-t md:border-t-0 md:border-l border-border bg-[color-mix(in_oklch,var(--primary)_7%,var(--background))] md:sticky md:top-0 md:h-screen p-4 md:p-6 flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-foreground">
+          <h2 className="text-base font-semibold text-foreground">
             Preview
           </h2>
           <LibraryDrawer />

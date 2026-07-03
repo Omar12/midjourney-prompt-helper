@@ -28,8 +28,26 @@ export function CopyButton({ text }: CopyButtonProps) {
       size="lg"
       onClick={handleCopy}
       disabled={!text}
-      className="w-full font-semibold"
+      data-copied={copied || undefined}
+      className="w-full gap-1.5 font-semibold data-[copied]:animate-[copy-confirm_0.5s_cubic-bezier(0.22,1,0.36,1)]"
     >
+      {copied && (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={3}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden
+          className="size-4"
+        >
+          <path
+            d="M20 6 9 17l-5-5"
+            className="[stroke-dasharray:24] [stroke-dashoffset:24] animate-[check-draw_0.35s_0.06s_cubic-bezier(0.65,0,0.35,1)_forwards]"
+          />
+        </svg>
+      )}
       {copied ? 'Copied!' : 'Copy prompt'}
     </Button>
   )

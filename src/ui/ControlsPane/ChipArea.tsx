@@ -14,7 +14,7 @@ export function ChipArea() {
         <Badge
           key={chip.id}
           variant="secondary"
-          className="h-auto overflow-visible flex items-center gap-1 pr-0"
+          className="h-auto overflow-visible flex items-center gap-1 pr-0 animate-in fade-in zoom-in-90 duration-200 ease-out"
         >
           <span className="truncate max-w-[200px]" title={chip.label}>
             {chip.label}

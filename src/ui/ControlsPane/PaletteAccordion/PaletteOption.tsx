@@ -32,9 +32,9 @@ export function PaletteOption({ option, category, isSelected }: PaletteOptionPro
       title={option.description ?? option.label}
       aria-pressed={isSelected}
       className={[
-        'inline-flex items-center rounded-md border px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer',
+        'inline-flex items-center rounded-md border px-2.5 py-1 text-xs font-medium transition-[colors,transform] cursor-pointer active:scale-[0.94]',
         isSelected
-          ? 'border-transparent bg-primary text-primary-foreground hover:bg-primary/90'
+          ? 'border-transparent bg-primary text-primary-foreground shadow-sm shadow-primary/25 hover:bg-primary/90 animate-[token-pop_0.28s_cubic-bezier(0.25,1,0.5,1)]'
           : 'border-border bg-secondary text-secondary-foreground hover:bg-secondary/80',
       ].join(' ')}
     >
