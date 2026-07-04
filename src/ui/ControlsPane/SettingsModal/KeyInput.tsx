@@ -19,8 +19,21 @@ export function KeyInput() {
   return (
     <div className="flex flex-col gap-3">
       <label htmlFor="api-key-input" className="text-sm font-medium">
-        API Key
+        OpenRouter API Key
       </label>
+      <p className="text-sm text-muted-foreground">
+        This app uses{' '}
+        <a
+          href="https://openrouter.ai/keys"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-foreground underline underline-offset-2"
+        >
+          OpenRouter
+        </a>
+        . Create a key there (starts with{' '}
+        <code className="rounded bg-muted px-1 py-0.5 text-xs">sk-or-</code>) and paste it below.
+      </p>
       <Input
         id="api-key-input"
         type="password"
