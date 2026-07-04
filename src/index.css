@@ -2,12 +2,17 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
     --font-heading: var(--font-sans);
     --font-sans: 'Geist Variable', sans-serif;
+    /* Prompt/flag text — Geist Mono, sibling to the Geist sans so the built
+       prompt reads as the same family. Replaces the inconsistent system mono
+       fallback that `font-mono` resolved to. */
+    --font-mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
 
     /*
      * Type scale — fixed rem, ~1.15 ratio (product register: predictable, not
